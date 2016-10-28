@@ -1,0 +1,14 @@
+.side-menu{
+	background-color: $black;
+	.trigger{
+		color: $white;
+	}
+}
+
+.content-wrapper{
+	.trigger{
+		span{
+			background-color: $black;
+		}
+	}
+}
