@@ -9,6 +9,10 @@ gulp.task('babel', function() {
         .pipe(babel({
             presets: ['es2015']
         }))
+        .pipe(browserify({
+          insertGlobals : true,
+          debug : !gulp.env.production
+        }))
         .pipe(gulp.dest('./app/dist/js'));
 });
 
