@@ -44,20 +44,51 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _menu = __webpack_require__(1);
 
 	var _menu2 = _interopRequireDefault(_menu);
 
+	var _carousel = __webpack_require__(2);
+
+	var _carousel2 = _interopRequireDefault(_carousel);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var style = __webpack_require__(2);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var style = __webpack_require__(3);
+
+	var App = function () {
+	  function App() {
+	    _classCallCheck(this, App);
+
+	    this.menuWrapper = '#side-menu';
+	    this.menuTrigger = '.trigger';
+	    this.carousel = '.hero-slider';
+	    this.sliderImage = '.slider-image';
+	  }
+
+	  _createClass(App, [{
+	    key: 'init',
+	    value: function init() {
+	      var menu = new _menu2.default(this.menuWrapper, this.menuTrigger);
+	      var carousel = document.querySelector(this.carousel);
+	      // render the carousel component
+	      menu.init();
+	    }
+	  }]);
+
+	  return App;
+	}();
 
 	window.onload = function () {
-		var menu = new _menu2.default("#side-menu", ".trigger");
-		menu.init();
-	}();
+	  var app = new App();
+	  app.init();
+	};
 
 /***/ },
 /* 1 */
@@ -110,15 +141,46 @@
 
 /***/ },
 /* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Carousel = function () {
+	    function Carousel(wrapper) {
+	        _classCallCheck(this, Carousel);
+
+	        this.wrapper = wraper;
+	    }
+
+	    _createClass(Carousel, [{
+	        key: "init",
+	        value: function init() {}
+	    }]);
+
+	    return Carousel;
+	}();
+
+	exports.default = Carousel;
+
+/***/ },
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(3);
+	var content = __webpack_require__(4);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -135,21 +197,21 @@
 	}
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(4)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "html,\nbody,\nul,\nol {\n  margin: 0;\n  padding: 0; }\n\n#side-menu {\n  width: 100%;\n  max-width: 650px;\n  height: 100%;\n  right: -100%;\n  display: flex;\n  position: fixed; }\n\n.side-menu .wrapper {\n  position: relative;\n  width: 100%;\n  height: 100%; }\n  .side-menu .wrapper .trigger {\n    position: absolute;\n    top: 5px;\n    right: 5px; }\n\n.content-wrapper .trigger {\n  position: absolute;\n  right: 5px;\n  top: 5px; }\n  .content-wrapper .trigger span {\n    display: block;\n    width: 15px;\n    height: 2.5px;\n    margin-top: 2.5px; }\n  @media only screen and (min-width: 650px) {\n    .content-wrapper .trigger {\n      display: none; } }\n\n.side-menu {\n  background-color: #000000; }\n  .side-menu .trigger {\n    color: #ffffff; }\n\n.content-wrapper .trigger span {\n  background-color: #000000; }\n\n.side-menu {\n  transition: 1s ease-in-out; }\n  .side-menu.open {\n    transform: translate(-100%); }\n", ""]);
+	exports.push([module.id, "html,\nbody,\nul,\nol {\n  margin: 0;\n  padding: 0; }\n\n#side-menu {\n  width: 100%;\n  max-width: 650px;\n  height: 100%;\n  right: -100%;\n  display: flex;\n  position: fixed; }\n\n.side-menu .wrapper {\n  position: relative;\n  width: 100%;\n  height: 100%; }\n  .side-menu .wrapper .trigger {\n    position: absolute;\n    top: 5px;\n    right: 5px; }\n\n.content-wrapper .trigger {\n  position: absolute;\n  right: 5px;\n  top: 5px; }\n  .content-wrapper .trigger span {\n    display: block;\n    width: 15px;\n    height: 2.5px;\n    margin-top: 2.5px; }\n  @media only screen and (min-width: 650px) {\n    .content-wrapper .trigger {\n      display: none; } }\n\n.content-wrapper .hero-section {\n  height: 100vh; }\n\n.content-wrapper .cta-section {\n  position: relative;\n  overflow: hidden; }\n\n.content-wrapper .cta-section--content-wrapper {\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-justify-content: center;\n  justify-content: center; }\n\n.content-wrapper .cta-section--top-logo {\n  position: relative;\n  top: -137px;\n  left: -37px;\n  margin-bottom: 75px; }\n  .content-wrapper .cta-section--top-logo:before {\n    position: absolute;\n    background-image: url(\"/img/top-icon.png\");\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: 100% 100%;\n    display: block;\n    content: \"\";\n    height: 213px;\n    width: 231px; }\n\n.content-wrapper .cta-section--header {\n  text-align: center; }\n  .content-wrapper .cta-section--header span.underline {\n    margin: 0 auto;\n    display: block;\n    height: 1px;\n    width: 50px; }\n\n.content-wrapper .cta-section--detail-block {\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-justify-content: center;\n  justify-content: center; }\n  .content-wrapper .cta-section--detail-block .body-text {\n    margin: 24px; }\n\n.side-menu {\n  background-color: #000000; }\n  .side-menu .trigger {\n    color: #ffffff; }\n\n.content-wrapper .trigger span {\n  background-color: #000000; }\n\n.content-wrapper .underline {\n  background-color: #cccccc; }\n\n.cta-gradient-blue {\n  background-image: -owg-linear-gradient(#61bfeb 40%, #0193d8 60%);\n  background-image: -webkit-linear-gradient(#61bfeb 40%, #0193d8 60%);\n  background-image: -moz-linear-gradient(#61bfeb 40%, #0193d8 60%);\n  background-image: -o-linear-gradient(#61bfeb 40%, #0193d8 60%);\n  background-image: linear-gradient(#61bfeb 40%, #0193d8 60%);\n  border: 0px;\n  color: #ffffff;\n  border-radius: 5px; }\n\n.side-menu {\n  -webkit-transition-duration: 1s;\n  -moz-transition-duration: 1s;\n  -o-transition-duration: 1s;\n  transition-duration: 1s;\n  -webkit-transition-timing-function: 1s ease-in-out;\n  -moz-transition-timing-function: 1s ease-in-out;\n  -o-transition-timing-function: 1s ease-in-out;\n  transition-timing-function: 1s ease-in-out; }\n  .side-menu.open {\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n    transform: translateX(-100%); }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/*
@@ -205,7 +267,7 @@
 
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

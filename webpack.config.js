@@ -1,6 +1,7 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
     
@@ -16,17 +17,29 @@ module.exports = {
         {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            query: {
+                presets: ['es2015', 'react']
+            }
         },
         {
             test: /\.scss$/,
-            loaders: ['style', 'css', 'sass'],
+            loader: ["style", "css", "sass"]
         }
       ]
     },
 
+    sassResources: "./node_modules/compass-mixins/lib",
+    sassLoader: {    
+        includePaths: [path.resolve(__dirname, "./node_modules/compass-mixins/lib")],
+        devtool: 'source-map',
+        cache: true,
+        debug: true,
+        'output-pathinfo': true,
+    },
+
     plugins: [
-        new ExtractTextPlugin("style.css", {
+        new ExtractTextPlugin('style.css', {
             allChunks: true
         }),
         new BrowserSyncPlugin({

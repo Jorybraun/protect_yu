@@ -1,6 +1,7 @@
 .side-menu{
-	transition: 1s ease-in-out;
-	&.open{ transform: translate(-100%);}
+  @include transition-duration(1s);
+  @include transition-timing-function( 1s ease-in-out);
+	&.open{ @include transform( translateX(-100%) ); }
 }
 
 

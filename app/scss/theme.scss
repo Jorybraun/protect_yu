@@ -11,4 +11,20 @@
 			background-color: $black;
 		}
 	}
+
+  .underline{
+    background-color: $underline-grey;
+  }
 }
+
+$topBlue: #61bfeb;
+$bottomBlue: #0193d8;
+
+.cta-gradient-blue{
+  @include background-image(linear-gradient($topBlue 40%, $bottomBlue 60%));
+  border: 0px;
+  color: $white;
+  border-radius: 5px;
+}
+
+

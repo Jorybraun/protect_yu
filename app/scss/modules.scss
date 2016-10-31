@@ -1,3 +1,5 @@
+
+
 .side-menu{
 
 	.wrapper{
@@ -26,4 +28,65 @@
 		}
 		@media #{$mobile} { display: none;}	
 	}
+
+	.hero-section{
+		height: 100vh;
+	}
+	
+	.cta-section {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.cta-section--content-wrapper{
+		@include display-flex;
+  	@include flex-direction(row);
+  	@include flex-wrap(wrap);
+  	@include justify-content(center);
+	}
+
+	.cta-section--top-logo {
+    position: relative;
+    top: -137px;
+    left: -37px;
+    margin-bottom: 75px;
+    &:before{
+    	position: absolute;
+    	background: {
+				image: url('/img/top-icon.png');
+				repeat: no-repeat;
+				position: center;
+				size: 100% 100%;
+
+			};
+			display: block;
+			content: "";
+			height: 213px;
+			width: 231px;
+    }
+	}
+	
+	.cta-section--header{
+		text-align: center;
+		span.underline{
+			margin: 0 auto;
+			display: block;
+			height: 1px;
+			width: 50px;
+		}
+	}
+
+	.cta-section--detail-block{
+		@include display-flex;
+  	@include flex-direction(row);
+  	@include flex-wrap(wrap);
+  	@include justify-content(center);
+  	.body-text{
+  		margin: 24px;
+  	}
+	}
+
+
+
 }
+
