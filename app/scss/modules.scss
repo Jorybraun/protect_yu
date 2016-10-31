@@ -26,7 +26,7 @@
 			height: 2.5px;
 			margin-top: 2.5px;
 		}
-		@media #{$mobile} { display: none;}	
+		@media #{$medium} { display: none;}	
 	}
 
 	.hero-section{
@@ -40,9 +40,9 @@
 
 	.cta-section--content-wrapper{
 		@include display-flex;
-  	@include flex-direction(row);
-  	@include flex-wrap(wrap);
-  	@include justify-content(center);
+  		@include flex-direction(row);
+  		@include flex-wrap(wrap);
+  		@include justify-content(center);
 	}
 
 	.cta-section--top-logo {
@@ -63,7 +63,7 @@
 			content: "";
 			height: 213px;
 			width: 231px;
-    }
+    	}
 	}
 	
 	.cta-section--header{
@@ -78,15 +78,215 @@
 
 	.cta-section--detail-block{
 		@include display-flex;
+  		@include flex-direction(row);
+  		@include flex-wrap(wrap);
+  		@include align-items(center);
+  		@include justify-content(center);
+  		margin-left: $gutter / 2;
+  		margin-right: $gutter / 2;
+		h3, p.subtitle,{
+			text-align: center;
+			margin: 10px $gutter;
+		}
+
+		p.body-text{
+			margin: $gutter / 2;
+		}
+		
+		button{
+			flex: 0 0 200px;
+			height: 50px;
+			margin-bottom: $gutter;
+		}
+
+	}
+}
+
+.cta-section--offer-block{
+	@include display-flex;
+  	@include flex-direction(row);
+  	@include flex-wrap(wrap);
+  	@include align-items(center);
+  	@include justify-content(center);
+	ul {
+		@include display-flex;
+  		@include flex-direction(row);
+  		@include flex-wrap(wrap);
+  		@include align-items(center);
+  		@include justify-content(center);
+
+		li.offer{
+			list-style: none;
+			flex: 1 0 229px;
+			max-width: 320px;
+			margin: $gutter;
+			padding: $gutter;
+
+			button.btn{
+				width: 100%;
+				height: 50px;
+			}
+		}
+	}
+
+	p.label{
+		margin: $gutter / 4 0;
+	}
+	
+	h4.offer-value{
+		margin: $gutter / 4 0;
+	}
+}
+
+.offer-value--section{
+	.offer-value--wrapper{
+		@include display-flex; 
+		@include flex-direction(row);
+		@include justify-content(center);
+	}
+
+	ul{
+		padding-top: $gutter;
+		max-width: 1200px;
+		@include display-flex;
+  		@include flex-direction(row);
+  		@include flex-wrap(wrap); 
+		li{
+			flex: 300px;
+			list-style: none;
+			margin: $gutter;
+	
+			h2, p{
+				margin: 0 0 $gutter / 2 0;
+			}
+		}
+	}
+}
+
+.about-us--section{
+	position: relative;
+	&:after{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 200px;
+    	height: 80px;
+		height: 0px;
+		display: block;
+    	content: '';
+		background: {
+			image: url('/img/bottom-icon.png');
+		}
+	}
+}
+
+.founder--list{
+	max-width: 1200px;
+	margin: 0 auto;
+	@include display-flex;
   	@include flex-direction(row);
   	@include flex-wrap(wrap);
   	@include justify-content(center);
-  	.body-text{
-  		margin: 24px;
+
+  	@media #{$medium} {
+  		@include flex-wrap(wrap);
   	}
+
+  	@media #{$large} {
+  		@include flex-wrap(nowrap);
+  	}
+}
+
+.founder--block{
+	flex: 0 0 320px;
+	margin: $gutter;
+	@include display-flex;
+  	@include flex-direction(row);
+  	@include flex-wrap(wrap);	
+  	@include align-items(center);
+	
+	.founder--image-wrapper{
+		margin: 0 auto;
+		@media #{$medium}{
+			margin: 0 $gutter;
+			repeat: no-repeat;
+			position: center;
+			size: 100% 100%;
+		}
+	}
+	
+	.founder--name{
+		margin: $gutter / 2 0;
+	}
+
+	.founder--content-wrapper{
+		margin: $gutter;
+	}
+
+  	@media #{$medium} { 
+  		@include flex(1 0 400px); 
+  		@include flex-wrap(nowrap); 
+  	}	
+}
+
+footer{
+	padding-top: $gutter * 2;
+	padding-bottom: $gutter * 3;
+
+	.footer--wrapper{
+		@include display-flex;
+		@include flex-direction(column);
+  		@include flex-wrap(wrap);
+  		@include justify-content(space-around);
+  		@include align-items(center);
+	}
+
+	.address--block{
+		text-align: center;
+	}
+
+	.social-media--block{
+		ul{
+			@include display-flex;
+			@include justify-content(space-around);
+			li{
+				list-style: none;
+			}
+		}
+	}
+	
+	.icon--block{
+		display: inline-flex;
+		img{
+			margin: 0 auto;
+		}
+	}
+
+	.flex-fieldset{
+		@include display-flex;
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		padding-bottom: 10px;
+	}
+	
+	label{
+		flex: 0 0 15px;
+	}
+
+	input[type="text"]{
+		flex: 0 0 85%;
+		padding-left: 3%;
+	}
+
+	input[type="submit"]{
+		@include display-flex;
+		@include justify-content(center);
+		@include align-content(center);
+		height: 50px;
+		margin-top: $gutter;
+		width: 100%;
 	}
 
 
 
 }
-
