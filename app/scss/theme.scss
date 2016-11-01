@@ -42,12 +42,17 @@
 
 	h3, p{
 		font-family: $openSans;
+		text-align: center;
+		@media #{$medium}{
+			text-align: left;
+		}
 	}
 
 	h3{
 		color: $cta-light-blue;
 		font-size: 24px;
 		font-weight: 300;
+		text-transform: uppercase;
 	}
 	p.subtitle{
 		color: $subtitle-grey;
@@ -69,6 +74,7 @@
 .cta-section--offer-block{
 	ul {
 		li.offer{
+			background-color: $white;
 			box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
 
 			p.label{
@@ -149,9 +155,7 @@
 	}
 }
 
-
 .founder--block{
-
 
 	.founder--role, .founder--name{
 		font-family: $openSans;
