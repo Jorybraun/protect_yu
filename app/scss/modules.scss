@@ -50,8 +50,11 @@
 
 	.cta-section--content{
 		@include display-flex;
-		flex: 1 0 30%;
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		@include justify-content(center);
 		max-width: 1200px;
+
 	}
 
 	.cta-section--top-logo {
@@ -93,12 +96,15 @@
   	@include align-items(center);
   	@include justify-content(center);
   	margin: 0 $gutter / 2;
+
 		h3, p.subtitle,{
 			margin: 10px $gutter;
 		}
 
-		p.body-text{
-			margin: $gutter / 2;
+		div.body-text{
+			p{
+				margin: $gutter / 2;
+			}
 		}
 		
 		button{
@@ -106,16 +112,40 @@
 			height: 50px;
 			margin-bottom: $gutter;
 		}
+
+		@media #{$mobile}{
+			max-width: 350px;
+			div.body-text{
+				margin: 0 auto;
+			}
+		}
+
 		@media #{$medium}{
-			flex: 30%;
+			flex: 1 0 450px;
     	max-width: 530px;
     	@include align-items(flex-start);
     	@include justify-content(flex-start);
+
+    	h3, p.subtitle,{
+				margin: 10px 0px;
+			}
+
+			button{
+				margin-right: $gutter;
+			}
+
+			div.body-text{
+
+				p{
+					margin: $gutter / 2 0px;
+				}
+			}
 		}
 	}
 }
 
 .cta-section--offer-block{
+	flex: 1 0 450px;
 	@include display-flex;
   @include flex-direction(row);
   @include flex-wrap(wrap);
@@ -157,7 +187,7 @@
 		@media #{$medium} {
 			@include flex-wrap(nowrap);
 			max-width: 800px;
-			margin-right: $gutter;
+			margin: $gutter;
 		}
 	}
 
@@ -239,11 +269,40 @@
 	
 	.founder--image-wrapper{
 		margin: 0 auto;
+		flex: 0 0 140px;
+		height: 170px;
+
+		&.piere{
+			background: {
+				image: url('/img/piere-g-fillion.png');
+				repeat: no-repeat;
+			}
+		}
+
+		&.michel{
+			background: {
+				image: url('/img/michel-junea-katsuya.png');
+				repeat: no-repeat;
+			}
+		}	
+
 		@media #{$medium}{
 			margin: 0 $gutter;
-			repeat: no-repeat;
-			position: center;
-			size: 100% 100%;
+			flex: 1 0 200px;
+			height: 250px;
+			&.piere{
+				background: {
+					image: url('/img/piere-g-fillion-lrg.png');
+					repeat: no-repeat;
+				}
+			}
+
+			&.michel{
+				background: {
+					image: url('/img/michel-junea-katsuya-lrg.png');
+					repeat: no-repeat;
+				}
+			}	
 		}
 	}
 	
@@ -256,12 +315,13 @@
 	}
 
   	@media #{$medium} { 
-  		@include flex(1 0 400px); 
+  		@include flex(1 0 450px); 
   		@include flex-wrap(nowrap); 
   	}	
 }
 
 footer{
+	display: inline-block;
 
 	.footer--wrapper{
 		@include display-flex;
@@ -270,10 +330,27 @@ footer{
   	@include justify-content(space-around);
   	@include align-items(center);
   	margin: $gutter * 2 0;
+  	@media #{$medium}{
+  		@include flex-direction(row);
+  		@include align-items(flex-start);
+  		max-width: 1200px;
+			margin: $gutter auto;
+  	}
 	}
 
 	.address--block{
 		text-align: center;
+		flex: 0 0 200px;
+		@media #{$medium}{
+			margin: 0px;
+			text-align: left;
+			p.address--street, p.address--phone{
+				margin-left: 0px;
+			}
+			p.address--phone{
+				margin: $gutter 0px;
+			}
+		}
 	}
 
 	.social-media--block{
@@ -290,6 +367,9 @@ footer{
 		display: inline-flex;
 		img{
 			margin: 0 auto;
+			@media #{$medium}{
+				margin-top: 1.3em;
+			}
 		}
 	}
 

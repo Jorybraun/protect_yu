@@ -42,17 +42,20 @@
 
 	h3, p{
 		font-family: $openSans;
-		text-align: center;
 		@media #{$medium}{
 			text-align: left;
 		}
 	}
 
 	h3{
+		text-align: center;
 		color: $cta-light-blue;
 		font-size: 24px;
 		font-weight: 300;
 		text-transform: uppercase;
+		@media #{$large}{
+			font-size: 30px;
+		}
 	}
 	p.subtitle{
 		color: $subtitle-grey;
@@ -60,8 +63,11 @@
 		font-weight: 300;
 	}
 	
-	p.body-text{
-		font-size: 14px;
+	div.body-text{
+		p{
+			text-align: left;
+			font-size: 14px;
+		}
 	}
 }
 
@@ -157,23 +163,24 @@
 
 .founder--block{
 
-	.founder--role, .founder--name{
+	.founder--role, .founder--name, .founder--bio{
 		font-family: $openSans;
-		text-align: center;
 		font-weight: 300;
 	}
 	
 	.founder--name{
 		font-size: 18px;
+		text-align: center;
 	}
 
 	.founder--role{
 		font-size: 14px;
+		text-align: center;
 		color: $subtitle-dark-grey;
 	}
 
   	@media #{$medium} { 
-		.founder--name, .founder--role{ text-align: left; }
+		.founder--name, .founder--role, { text-align: left; }
 		
 
   		.founder--name{ font-size: 24px; }
