@@ -1,7 +1,7 @@
 import Menu from './menu';
 import Carousel from './carousel';
 
-const style = require("!style!css!sass!../scss/main.scss");
+const style = require("!style!css!resolve-url!sass!../scss/main.scss");
 
 class App {
   constructor(){
@@ -21,12 +21,9 @@ class App {
     carousel.init();
     menu.init();
 
-    // $('.scroll-to').bind('click', () => .scrollTo(this.target, { duration:800 }));
     scrollTrigger.addEventListener('click', () => {
       $('html, body').animate({scrollTop: scrollTrigger.offsetTop + 50}, 500);
     });
-
-
   }
 }
 

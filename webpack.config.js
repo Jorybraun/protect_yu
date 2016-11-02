@@ -8,7 +8,7 @@ module.exports = {
     entry:  "./app/js/app.js",
 
     output: {
-        path: './public',
+        path: './public/',
         filename: 'app.bundle.js',
     },
 
@@ -23,15 +23,20 @@ module.exports = {
             }
         },
         {
-            test: /\.scss$/,
-            loader: ["style", "css", "sass"]
-        }
+            test: /\.scss$/, 
+            loader: 'style!css!sass!resolve-url!sass?sourceMap'
+        },
+        {
+            test: /\.css$/,
+            loader: "style-loader!css-loader!root=."
+        },
+        { test: /\.(png|jpg|svg)$/, loader: 'file-loader' },
       ]
     },
 
     sassResources: "./node_modules/compass-mixins/lib",
     sassLoader: {    
-        includePaths: [path.resolve(__dirname, "./node_modules/compass-mixins/lib"), path.resolve(__dirname, "./node_modules/owl.carousel/dist/assets")],
+        includePaths: [path.resolve(__dirname, "./node_modules/compass-mixins/lib"), path.resolve(__dirname, "/img")],
         devtool: 'source-map',
         cache: true,
         debug: true,
