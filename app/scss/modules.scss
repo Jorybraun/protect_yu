@@ -1,6 +1,7 @@
 
 
 .side-menu{
+	z-index: 4;
 
 	.wrapper{
 		position: relative;
@@ -20,6 +21,7 @@
 			position: absolute;
 			right: 5px;
 			top: 5px;
+			z-index: 3;
 		span{
 			display: block;
 			width: 15px;
@@ -29,8 +31,39 @@
 		@media #{$medium} { display: none;}	
 	}
 
+	.logo-wrapper{
+		max-width: 1200px;
+		width: 100%;
+		position: absolute;
+    z-index: 2;
+    margin-top: $gutter;
+    margin-left: $gutter * 2;
+	}
+
+	.owl-stage-outer, .owl-stage, .owl-item{
+		height: 100%;
+	}
+
 	.hero-section{
 		height: 100vh;
+		position: relative;
+	}
+
+	.hero-section--slider{
+		position: relative;
+		height: 100%;
+		width: 100%;
+		.owl-slide{
+			height: 100%;
+			width: 100%;
+			background: {
+				image: url('/img/background.png');
+				repeat: no-repeat;
+				position: center;
+			 	size: cover;
+				position: center center; 
+			}
+		}
 	}
 	
 	.cta-section {
@@ -145,7 +178,7 @@
 }
 
 .cta-section--offer-block{
-	flex: 1 0 450px;
+	flex: 1 1 450px;
 	@include display-flex;
   @include flex-direction(row);
   @include flex-wrap(wrap);
@@ -160,7 +193,7 @@
 
 		li.offer{
 			list-style: none;
-			flex: 1 0 229px;
+			flex: 1 229px;
 			max-width: 320px;
 			margin: $gutter;
 			padding: $gutter;

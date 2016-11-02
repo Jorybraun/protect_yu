@@ -31,7 +31,7 @@ module.exports = {
 
     sassResources: "./node_modules/compass-mixins/lib",
     sassLoader: {    
-        includePaths: [path.resolve(__dirname, "./node_modules/compass-mixins/lib")],
+        includePaths: [path.resolve(__dirname, "./node_modules/compass-mixins/lib"), path.resolve(__dirname, "./node_modules/owl.carousel/dist/assets")],
         devtool: 'source-map',
         cache: true,
         debug: true,

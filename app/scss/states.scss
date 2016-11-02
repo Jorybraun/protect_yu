@@ -1,7 +1,12 @@
 .side-menu{
   @include transition-duration(1s);
   @include transition-timing-function( 1s ease-in-out);
-	&.open{ @include transform( translateX(-100%) ); }
 }
 
+body.open{
+  overflow: hidden;
+  .side-menu{
+    @include transform( translateX(-100%) ); 
+  }
+}
 
