@@ -4,9 +4,10 @@ class Carousel {
   }
   init(){
     $(this.wrapper).owlCarousel({
+      dots: true,
       items: 1,
-      singleItem: true,
-      mergeFit: true
+      mergeFit: true,
+      nav: false
     });
   }
 }
