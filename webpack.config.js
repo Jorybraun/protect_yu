@@ -8,8 +8,9 @@ module.exports = {
     entry:  "./app/js/app.js",
 
     output: {
-        path: './public/',
+        path: 'public/',
         filename: 'app.bundle.js',
+        publicPath: '/img/'
     },
 
     module: {
@@ -28,9 +29,9 @@ module.exports = {
         },
         {
             test: /\.css$/,
-            loader: "style-loader!css-loader!root=."
+            loader: "style-loader!css-loader!"
         },
-        { test: /\.(png|jpg|svg)$/, loader: 'file-loader' },
+        { test: /\.(png|jpg|svg)$/, loader: 'file-loader?name=/img/[name].[ext]' },
       ]
     },
 

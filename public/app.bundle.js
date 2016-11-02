@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/img/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -316,49 +316,49 @@
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e65ea740bfc7fdd0912302b66655a66a.svg";
+	module.exports = __webpack_require__.p + "/img/dropdown.svg";
 
 /***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "18f328b1207b93d49a7a78be7d5e36d0.png";
+	module.exports = __webpack_require__.p + "/img/background.png";
 
 /***/ },
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e85d14f79eb66986c8a048adbf2b6626.png";
+	module.exports = __webpack_require__.p + "/img/top-icon.png";
 
 /***/ },
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "db3f2f5e276731dcadeaa4bd0cf7760b.png";
+	module.exports = __webpack_require__.p + "/img/bottom-icon.png";
 
 /***/ },
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "9f7a7e5e0002314f1cb0123c23c2c970.png";
+	module.exports = __webpack_require__.p + "/img/piere-g-fillion.png";
 
 /***/ },
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "c55677095e5290772fd482bf86bce5b1.png";
+	module.exports = __webpack_require__.p + "/img/michel-junea-katsuya.png";
 
 /***/ },
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "2ff42b5a51e3da80294a0a902ca103f6.png";
+	module.exports = __webpack_require__.p + "/img/piere-g-fillion-lrg.png";
 
 /***/ },
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "3965f44d03e9a65da196c650a36497c2.png";
+	module.exports = __webpack_require__.p + "/img/michel-junea-katsuya-lrg.png";
 
 /***/ },
 /* 16 */
