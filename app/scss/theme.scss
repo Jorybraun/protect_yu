@@ -36,6 +36,18 @@
 	font-weight: 300;
 }
 
+.hero-section{
+	.menu-row{
+		color: $white;
+		a{
+			color: $white;
+			text-decoration: none;
+			font-family: $openSans;
+			font-weight: 400;
+		}
+	}
+}
+
 
 .cta-section--detail-block {
 	@include font-smoothing(off);
@@ -212,7 +224,7 @@ footer{
 
 	.contact-form--block{
 		label{
-			color: $white;
+			colorù: $white;
 		}
 
 		.flex-fieldset{
