@@ -10,10 +10,43 @@
 	}
 }
 
+.owl-slide{
+	.slide-text{
+		h4, p{
+			text-align: center;
+			font-family: $openSans;
+			color: $white;
+		}
+
+		h4{
+			font-size: 18px;
+			font-weight: 400;
+		}
+
+		p{
+			font-size: 14.44px;
+			font-weight: 300;
+		}
+
+
+		@media #{$medium}{
+
+			h4{
+				font-size: 35px;
+			}
+
+			p{
+				font-size: 18px;
+			}
+
+		}
+	}
+}
+
 .content-wrapper{
 	.trigger{
 		span{
-			background-color: $black;
+			background-color: $white;
 		}
 	}
 

@@ -22,6 +22,7 @@
 			right: 5px;
 			top: 5px;
 			z-index: 3;
+			margin: $gutter $gutter;
 		span{
 			display: block;
 			width: 15px;
@@ -32,63 +33,81 @@
 	}
 
 	.menu-row{
-		position: absolute;
-		right: 0;
-		top: 0;
-		margin-top: 35px;
-		margin-right: $gutter * 2;
-		z-index: 5;
-		ul{
-			display: inline-flex;
-			align-items: flex-end;
-			li{
-				margin-left: $gutter / 2; 
-				list-style: none;
-			}
 
-			&.drop-down{
-				display: block;
-				&:hover{
-					> :last-child{
-						display: block;
-					}
+		display: none;
+
+		@media #{$medium}{
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			margin-top: 35px;
+			margin-right: $gutter * 2;
+			z-index: 5;
+			ul{
+				display: inline-flex;
+				align-items: flex-end;
+				li{
+					margin-left: $gutter / 2; 
+					list-style: none;
 				}
 
-				li:last-child{
-					position: absolute;
-					display: none;
-				}
-			}
-
-			&.language{
-				border-left: 2px solid $white;
-
-				li:first-child:after{
-					background: {
-						image: url('/img/dropdown.svg');
-						repeat: none;
-						size: 100% 100%;
-					}
-					position: absolute;
+				&.drop-down{
 					display: block;
-					content: "";
-					width: 12px;
-					height: 7px;
-					right: -15px;
-    				top: 19px;
-				}	
+					&:hover{
+						> :last-child{
+							display: block;
+						}
+					}
 
+					li:last-child{
+						position: absolute;
+						display: none;
+					}
+				}
+
+				&.language{
+					border-left: 2px solid $white;
+
+					li:first-child:after{
+						background: {
+							image: url('/img/dropdown.svg');
+							repeat: none;
+							size: 100% 100%;
+						}
+						position: absolute;
+						display: block;
+						content: "";
+						width: 12px;
+						height: 7px;
+						right: -15px;
+	    				top: 19px;
+					}	
+
+				}
 			}
 		}
 	}
 
 	.logo-wrapper{
-		max-width: 1200px;
-		width: 100%;
+		margin: $gutter $gutter;
 		position: absolute;
-    z-index: 2;
-    margin-top: $gutter;
-    margin-left: $gutter * 2;
+		z-index: 2;
+
+		img{
+			width: 100px;
+		}
+
+		@media #{$medium}{
+			max-width: 1200px;
+			width: 100%;
+    		margin-left: $gutter * 2;
+
+    		img{
+    			width: auto;
+    		}
+		}
+
 	}
 
 	.owl-stage-outer, .owl-stage, .owl-item{
@@ -105,6 +124,10 @@
 		height: 100%;
 		width: 100%;
 		.owl-slide{
+			@include display-flex;
+			@include flex-wrap(wrap);
+			@include justify-content(center);
+			@include align-items(center);
 			height: 100%;
 			width: 100%;
 			background: {
@@ -114,6 +137,10 @@
 			 	size: cover;
 				position: center center; 
 			}
+		}
+		.slide-text{
+			max-width: 900px;
+			margin: $gutter;
 		}
 	}
 	
