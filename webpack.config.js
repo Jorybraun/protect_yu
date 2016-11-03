@@ -8,9 +8,9 @@ module.exports = {
     entry:  "./app/js/app.js",
 
     output: {
-        path: 'public/',
-        filename: 'app.bundle.js',
-        publicPath: '/img/'
+        path: __dirname + "/public/assets/",
+        filename: 'js/app.bundle.js',
+        publicPath:  "assets"
     },
 
     module: {
@@ -37,7 +37,7 @@ module.exports = {
 
     sassResources: "./node_modules/compass-mixins/lib",
     sassLoader: {    
-        includePaths: [path.resolve(__dirname, "./node_modules/compass-mixins/lib"), path.resolve(__dirname, "/img")],
+        includePaths: [path.resolve(__dirname, "./node_modules/compass-mixins/lib")],
         devtool: 'source-map',
         cache: true,
         debug: true,
@@ -58,6 +58,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './app/index.html',
             inject: 'body',
+            filename: "../index.html"
         })
     ]
 };

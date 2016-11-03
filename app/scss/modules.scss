@@ -94,7 +94,7 @@
 
 					li:first-child:after{
 						background: {
-							image: url('../img/dropdown.svg');
+							image: url('../../public/assets/img/dropdown.svg');
 							repeat: none;
 							size: 100% 100%;
 						}
@@ -185,7 +185,7 @@
 			height: 100%;
 			width: 100%;
 			background: {
-				image: url('../img/background.png');
+				image: url('../../public/assets/img/background.png');
 				repeat: no-repeat;
 				position: center;
 			 	size: cover;
@@ -230,7 +230,7 @@
     &:before{
     	position: absolute;
     	background: {
-				image: url('../img/top-icon.png');
+				image: url('../../public/assets/img/top-icon.png');
 				repeat: no-repeat;
 				position: center;
 				size: 100% 100%;
@@ -416,7 +416,7 @@
 		display: block;
     content: '';
 		background: {
-			image: url('../img/bottom-icon.png');
+			image: url('../../public/assets/img/bottom-icon.png');
 		}
 	}
 }
@@ -459,14 +459,14 @@
 
 		&.piere{
 			background: {
-				image: url('../img/piere-g-fillion.png');
+				image: url('../../public/assets/img/piere-g-fillion.png');
 				repeat: no-repeat;
 			}
 		}
 
 		&.michel{
 			background: {
-				image: url('../img/michel-junea-katsuya.png');
+				image: url('../../public/assets/img/michel-junea-katsuya.png');
 				repeat: no-repeat;
 			}
 		}	
@@ -477,14 +477,14 @@
 			height: 250px;
 			&.piere{
 				background: {
-					image: url('../img/piere-g-fillion-lrg.png');
+					image: url('../../public/assets/img/piere-g-fillion-lrg.png');
 					repeat: no-repeat;
 				}
 			}
 
 			&.michel{
 				background: {
-					image: url('../img/michel-junea-katsuya-lrg.png');
+					image: url('../../public/assets/img/michel-junea-katsuya-lrg.png');
 					repeat: no-repeat;
 				}
 			}	
