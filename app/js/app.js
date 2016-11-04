@@ -1,7 +1,7 @@
 import Menu from './menu';
 import Carousel from './carousel';
 
-const style = require("!style!css!resolve-url!sass!../scss/main.scss");
+require("css!sass!../scss/main.scss");
 
 class App {
   constructor(){

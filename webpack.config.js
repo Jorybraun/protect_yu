@@ -7,11 +7,11 @@ module.exports = {
     
     entry:  "./app/js/app.js",
 
-    output: {
-        path: __dirname + "/public/assets/",
-        filename: 'js/app.bundle.js',
-        publicPath:  "assets"
-    },
+    output: { 
+        path: __dirname + "/public/assets", 
+        filename: 'js/app.bundle.js', 
+    }, 
+
 
     module: {
         loaders: [
@@ -25,13 +25,13 @@ module.exports = {
         },
         {
             test: /\.scss$/, 
-            loader: 'style!css!sass!resolve-url!sass?sourceMap'
+            loader: ExtractTextPlugin.extract('css!sass!resolve-url'),
         },
-        {
-            test: /\.css$/,
-            loader: "style-loader!css-loader!"
-        },
-        { test: /\.(png|jpg|svg)$/, loader: 'file-loader?name=/img/[name].[ext]' },
+        // {
+        //     test: /\.css$/,
+        //     loader: ExtractTextPlugin.extract("style-loader", "css!sass")
+        // },
+        { test: /\.(png|jpg|svg)$/, loader: 'file-loader?name=./img/[name].[ext]' },
       ]
     },
 
@@ -45,7 +45,7 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin('style.css', {
+        new ExtractTextPlugin('assets/[name].css', {
             allChunks: true
         }),
         new BrowserSyncPlugin({
