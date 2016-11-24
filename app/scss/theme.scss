@@ -236,10 +236,10 @@
 			.value-title{
 				text-transform: uppercase;
 				font-family: $openSans;
-				font-size: 30px;
+				font-size: 22px;
 				font-weight: 100;
 				@media #{$medium}{
-					font-size: 40px;
+					font-size: 30px;
 				}
 			}
 
@@ -275,7 +275,6 @@
 
   	@media #{$medium} { 
 		.founder--name, .founder--role, { text-align: left; }
-		
 
   		.founder--name{ font-size: 24px; }
   	}	

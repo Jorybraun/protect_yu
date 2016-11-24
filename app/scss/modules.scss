@@ -123,9 +123,9 @@
 
 		@media #{$medium}{
     	margin-left: $gutter * 2;
-    	img{
-    		width: auto;
-   		}
+	    	img{
+	    		width: auto;
+	   		}
 		}
 	}
 
@@ -394,9 +394,16 @@
   		@include flex-direction(row);
   		@include flex-wrap(wrap); 
 		li{
-			flex: 300px;
 			list-style: none;
 			margin: $gutter;
+
+			&:first-child{
+				flex: 1 0 550px;
+			}
+
+			&:last-child{
+				flex: 1 0 300px;
+			}
 	
 			h2, p{
 				margin: 0 0 $gutter / 2 0;
@@ -434,7 +441,7 @@
   	}
 
   	@media #{$large} {
-  		@include flex-wrap(nowrap);
+  		@include flex-wrap(wrap);
   	}
 }
 
@@ -446,11 +453,11 @@
   	@include flex-wrap(wrap);	
   	@include align-items(center);
 
-  .founder--role{
-  	@media #{$mobile}{
-  		margin: 0 25px;
-  	}
-  }
+	.founder--role{
+	  	@media #{$mobile}{
+	  		margin: 0 25px;
+	  	}
+	}
 	
 	.founder--image-wrapper{
 		margin: 0 auto;
@@ -487,7 +494,19 @@
 					image: url('../../public/assets/img/michel-junea-katsuya-lrg.png');
 					repeat: no-repeat;
 				}
-			}	
+			}
+
+			// &.michel-wilson{
+			// 	background: {
+			// 		image: url('../../public/assets/img/michel-wilson.png');
+			// 	}
+			// }
+
+			// &.richard-thouin{
+			// 	background: {
+			// 		image: url('../../public/assets/img/richard-thouin.png');
+			// 	}
+			// }	
 		}
 	}
 	
@@ -500,7 +519,7 @@
 	}
 
   	@media #{$medium} { 
-  		@include flex(1 0 450px); 
+  		@include flex(1 1 1000px); 
   		@include flex-wrap(nowrap); 
   	}	
 }
