@@ -94,7 +94,7 @@
 
 					li:first-child:after{
 						background: {
-							image: url('../../public/assets/img/dropdown.svg');
+							image: url('../img/dropdown.svg');
 							repeat: none;
 							size: 100% 100%;
 						}
@@ -185,7 +185,7 @@
 			height: 100%;
 			width: 100%;
 			background: {
-				image: url('../../public/assets/img/background.png');
+				image: url('../img/background.png');
 				repeat: no-repeat;
 				position: center;
 			 	size: cover;
@@ -230,7 +230,7 @@
     &:before{
     	position: absolute;
     	background: {
-				image: url('../../public/assets/img/top-icon.png');
+				image: url('../img/top-icon.png');
 				repeat: no-repeat;
 				position: center;
 				size: 100% 100%;
@@ -423,7 +423,7 @@
 		display: block;
     content: '';
 		background: {
-			image: url('../../public/assets/img/bottom-icon.png');
+			image: url('../img/bottom-icon.png');
 		}
 	}
 }
@@ -466,17 +466,34 @@
 
 		&.piere{
 			background: {
-				image: url('../../public/assets/img/piere-g-fillion.png');
+				image: url('../img/piere-g-fillion.png');
 				repeat: no-repeat;
 			}
 		}
 
 		&.michel{
 			background: {
-				image: url('../../public/assets/img/michel-junea-katsuya.png');
+				image: url('../img/michel-junea-katsuya.png');
 				repeat: no-repeat;
 			}
-		}	
+		}
+
+		&.michel-wilson{
+			background: {
+				size:  140px 170px;
+				image: url('../img/michel-wilson.png');
+				repeat: no-repeat;
+			}
+		}
+
+		&.richard-thouin{
+
+			background: {
+				size: 140px 170px;
+				image: url('../img/richard-thouin.png');
+				repeat: no-repeat;
+			}
+		}		
 
 		@media #{$medium}{
 			margin: 0 $gutter;
@@ -484,29 +501,33 @@
 			height: 250px;
 			&.piere{
 				background: {
-					image: url('../../public/assets/img/piere-g-fillion-lrg.png');
+					image: url('../img/piere-g-fillion-lrg.png');
 					repeat: no-repeat;
 				}
 			}
 
 			&.michel{
 				background: {
-					image: url('../../public/assets/img/michel-junea-katsuya-lrg.png');
+					image: url('../img/michel-junea-katsuya-lrg.png');
 					repeat: no-repeat;
 				}
 			}
 
-			// &.michel-wilson{
-			// 	background: {
-			// 		image: url('../../public/assets/img/michel-wilson.png');
-			// 	}
-			// }
+			&.michel-wilson{
+				background: {
+					size: 100% 100%;
+					image: url('../img/michel-wilson.png');
+					repeat: no-repeat;
+				}
+			}
 
-			// &.richard-thouin{
-			// 	background: {
-			// 		image: url('../../public/assets/img/richard-thouin.png');
-			// 	}
-			// }	
+			&.richard-thouin{
+				background: {
+					size: 100% 230px;
+					image: url('../img/richard-thouin.png');
+					repeat: no-repeat;
+				}
+			}	
 		}
 	}
 	

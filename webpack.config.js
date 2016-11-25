@@ -8,10 +8,10 @@ module.exports = {
     entry:  "./app/js/app.js",
 
     output: { 
-        path: __dirname + "/public/assets", 
+        path: path.join(__dirname, 'public'), 
         filename: 'js/app.bundle.js', 
-    }, 
-
+        publicPath: './'
+    },
 
     module: {
         loaders: [
@@ -31,7 +31,7 @@ module.exports = {
         //     test: /\.css$/,
         //     loader: ExtractTextPlugin.extract("style-loader", "css!sass")
         // },
-        { test: /\.(png|jpg|svg)$/, loader: 'file-loader?name=./img/[name].[ext]' },
+        { test: /\.(png|jpg|svg|gif)$/, loader: 'file?name=./img/[name].[ext]' },
       ]
     },
 
@@ -45,7 +45,7 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin('assets/[name].css', {
+        new ExtractTextPlugin('[name].css', {
             allChunks: true
         }),
         new BrowserSyncPlugin({
@@ -58,7 +58,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './app/index.html',
             inject: 'body',
-            filename: "../index.html"
+            filename: "./index.html"
         })
     ]
 };
