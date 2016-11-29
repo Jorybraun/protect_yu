@@ -2,6 +2,7 @@ import Menu from './menu';
 import Carousel from './carousel';
 
 require("html!../index.html");
+require("html!../english_index.html");
 require("css!sass!../scss/main.scss");
 require("babel-loader!./owl.carousel.min.js");
 

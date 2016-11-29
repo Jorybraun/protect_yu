@@ -62,7 +62,8 @@
 
 	__webpack_require__(8);
 	__webpack_require__(9);
-	__webpack_require__(11);
+	__webpack_require__(10);
+	__webpack_require__(12);
 
 	var App = function () {
 	  function App() {
@@ -200,9 +201,15 @@
 
 /***/ },
 /* 9 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = __webpack_public_path__ + \"english_index.html\";";
+
+/***/ },
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(10)();
+	exports = module.exports = __webpack_require__(11)();
 	// imports
 
 
@@ -213,7 +220,7 @@
 
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	/*
@@ -269,7 +276,7 @@
 
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";

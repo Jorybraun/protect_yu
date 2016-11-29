@@ -573,7 +573,7 @@ footer {
     list-style: none;
     margin: 24px; }
     .offer-value--section ul li:first-child {
-      flex: 1 0 550px; }
+      flex: 1 1 550px; }
     .offer-value--section ul li:last-child {
       flex: 1 0 300px; }
     .offer-value--section ul li h2, .offer-value--section ul li p {

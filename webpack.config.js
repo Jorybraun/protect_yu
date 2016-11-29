@@ -1,7 +1,13 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var I18nPlugin = require("i18n-webpack-plugin");
 var path = require('path');
+
+var languages = {
+    "fr": null,
+    "en": require("./en.json")
+};
 
 module.exports = {
     
@@ -29,7 +35,7 @@ module.exports = {
         },
         {
             test: /\.html$/,
-            loader: 'file-loader?name=[name].[ext]!extract-loader!html-loader'
+            loader: 'file-loader?name=[name].[ext]!extract-loader!html-loader?'
         },
         { test: /\.(png|jpg|svg|gif)$/, loader: 'file?name=img/[name].[ext]' },
       ]
