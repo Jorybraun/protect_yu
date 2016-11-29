@@ -27,11 +27,11 @@ module.exports = {
             test: /\.scss$/, 
             loader: ExtractTextPlugin.extract('css!sass!resolve-url'),
         },
-        // {
-        //     test: /\.css$/,
-        //     loader: ExtractTextPlugin.extract("style-loader", "css!sass")
-        // },
-        { test: /\.(png|jpg|svg|gif)$/, loader: 'file?name=./img/[name].[ext]' },
+        {
+            test: /\.html$/,
+            loader: 'file-loader?name=[name].[ext]!extract-loader!html-loader'
+        },
+        { test: /\.(png|jpg|svg|gif)$/, loader: 'file?name=img/[name].[ext]' },
       ]
     },
 
@@ -55,10 +55,5 @@ module.exports = {
           port: 3000,
           server: { baseDir: ['public'] }
         }),
-        new HtmlWebpackPlugin({
-            template: './app/index.html',
-            inject: 'body',
-            filename: "./index.html"
-        })
     ]
 };
