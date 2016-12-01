@@ -56,7 +56,6 @@
 	}
 
 	.menu-row{
-
 		display: none;
 
 		@media #{$medium}{
@@ -480,7 +479,7 @@
 
 		&.michel-wilson{
 			background: {
-				size:  140px 170px;
+				size:  140px 165px;
 				image: url('../img/michel-wilson.png');
 				repeat: no-repeat;
 			}
@@ -515,7 +514,7 @@
 
 			&.michel-wilson{
 				background: {
-					size: 100% 100%;
+					size: 100% 230px;
 					image: url('../img/michel-wilson.png');
 					repeat: no-repeat;
 				}
@@ -551,16 +550,16 @@ footer{
 	.footer--wrapper{
 		@include display-flex;
 		@include flex-direction(column);
-  	@include flex-wrap(wrap);
-  	@include justify-content(space-around);
-  	@include align-items(center);
-  	margin: $gutter * 2 0;
-  	@media #{$medium}{
-  		@include flex-direction(row);
-  		@include align-items(flex-start);
-  		max-width: 1200px;
+  		@include flex-wrap(wrap);
+  		@include justify-content(space-around);
+  		@include align-items(center);
+  		margin: $gutter * 2 0;
+  		@media #{$medium}{
+  			@include flex-direction(row);
+  			@include align-items(flex-start);
+  			max-width: 1200px;
 			margin: $gutter auto;
-  	}
+  		}
 	}
 
 	.address--block{
