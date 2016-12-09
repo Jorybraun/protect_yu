@@ -261,11 +261,11 @@
 
 	.cta-section--detail-block{
 		@include display-flex;
-  	@include flex-direction(row);
-  	@include flex-wrap(wrap);
-  	@include align-items(center);
-  	@include justify-content(center);
-  	margin: 0 $gutter / 2;
+	  	@include flex-direction(row);
+	  	@include flex-wrap(wrap);
+	  	@include align-items(center);
+	  	@include justify-content(center);
+	  	margin: 0 $gutter / 2;
 
 		h3, p.subtitle,{
 			margin: 10px $gutter;
@@ -292,14 +292,14 @@
 
 		@media #{$medium}{
 			flex: 1 0 450px;
-    	max-width: 530px;
-    	@include align-items(flex-start);
-    	@include justify-content(center);
+    		max-width: 530px;
+    		@include align-items(flex-start);
+    		@include justify-content(center);
 
-    	h3, p.subtitle,{
-    		text-align: center;
-				margin: 10px 0px;
-			}
+	    	h3, p.subtitle,{
+	    		text-align: center;
+					margin: 10px 0px;
+				}
 
 			button{
 				margin-right: $gutter;
@@ -325,10 +325,10 @@
 .cta-section--offer-block{
 	flex: 1 1 450px;
 	@include display-flex;
-  @include flex-direction(row);
-  @include flex-wrap(wrap);
-  @include align-items(center);
-  @include justify-content(center);
+  	@include flex-direction(row);
+  	@include flex-wrap(wrap);
+  	@include align-items(center);
+  	@include justify-content(center);
 	ul {
 		@include display-flex;
   		@include flex-direction(row);
@@ -418,9 +418,9 @@
 		bottom: 0;
 		right: 0;
 		width: 200px;
-    height: 80px;
+    	height: 80px;
 		display: block;
-    content: '';
+    	content: '';
 		background: {
 			image: url('../img/bottom-icon.png');
 		}
@@ -429,7 +429,8 @@
 
 .founder--list{
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 25px auto 0 auto;
+	padding-bottom: 24px;
 	@include display-flex;
   	@include flex-direction(row);
   	@include flex-wrap(wrap);
@@ -450,12 +451,17 @@
 	@include display-flex;
   	@include flex-direction(row);
   	@include flex-wrap(wrap);	
-  	@include align-items(center);
+  	@include align-items(flex-start);
 
 	.founder--role{
 	  	@media #{$mobile}{
 	  		margin: 0 25px;
 	  	}
+	}
+
+	.btn{
+		margin: 12px 0;
+		padding: 15px 50px;
 	}
 	
 	.founder--image-wrapper{
@@ -486,18 +492,34 @@
 		}
 
 		&.richard-thouin{
-
 			background: {
 				size: 140px 170px;
 				image: url('../img/richard-thouin.png');
 				repeat: no-repeat;
 			}
-		}		
+		}
+
+		&.mario-fillion{
+			background: {
+				size: 140px 170px;
+				image: url('../img/mario-fillion.png');
+				repeat: no-repeat;
+			}
+		}	
+
+		&.avatar{
+			background: {
+				size: 140px 170px;
+				image: url('../img/avatar.png');
+				repeat: no-repeat;
+			}
+		}	
 
 		@media #{$medium}{
 			margin: 0 $gutter;
 			flex: 1 0 200px;
 			height: 250px;
+
 			&.piere{
 				background: {
 					image: url('../img/piere-g-fillion-lrg.png');
@@ -512,26 +534,17 @@
 				}
 			}
 
-			&.michel-wilson{
-				background: {
-					size: 100% 230px;
-					image: url('../img/michel-wilson.png');
-					repeat: no-repeat;
-				}
+			&.michel-wilson,
+			&.avatar,
+			&.mario-fillion,
+			&.richard-thouin, {
+				background-size: 100% 230px;
 			}
-
-			&.richard-thouin{
-				background: {
-					size: 100% 230px;
-					image: url('../img/richard-thouin.png');
-					repeat: no-repeat;
-				}
-			}	
 		}
 	}
-	
+
 	.founder--name{
-		margin: $gutter / 2 0;
+		margin: 0 0 $gutter / 2 0;
 	}
 
 	.founder--content-wrapper{
@@ -539,7 +552,7 @@
 	}
 
   	@media #{$medium} { 
-  		@include flex(1 1 1000px); 
+  		@include flex(1 1 500px); 
   		@include flex-wrap(nowrap); 
   	}	
 }
