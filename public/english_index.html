@@ -54,6 +54,7 @@
     </div>
 
     <section class="hero-section">
+
       <div class="logo-wrapper">
         <img src="./img/header-logo.png" alt="w">
       </div>
@@ -100,7 +101,6 @@
         <p>Learn more</p>
         <img src="./img/dropdown-yellow.svg">
       </div>
-
     </section>
     
     <section class="cta-section">
@@ -115,6 +115,17 @@
           </p>
           <span class="underline"></span>
         </div>
+        
+        <div class="cta-section--video">
+          <div class="cta-section--video__wrapper">
+            <span class="js-video--trigger video--trigger"></span>
+            <div class="video">
+              <span class="close"></span>
+              <video id="bcVideo" data-account="4218124750001" data-player="default" data-embed="default" data-video-id="5241646015001"></video>
+            </div>
+          </div>
+        </div> 
+
         <div class="cta-section--content">
           <div class="cta-section--detail-block">
             <div class="detail-block--header">
@@ -136,7 +147,7 @@
                 *Pre-launch offer, minimum of 10 shares.
               </p>
             </div>
-            <button class="cta-gradient-blue btn ">
+            <button class="cta-gradient-blue btn">
               I want to invest!
             </button>
             <a href="https://www.gotroo.com"><img src="./img/logo-gotroo.png" alt=""></a>
@@ -363,10 +374,12 @@
       </div>
     </div>
   </footer>
+
   <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>
   <script src="./js/app.bundle.js"></script>
+  <script src="//players.brightcove.net/4218124750001/default_default/index.min.js"></script>
 </body>
 </html>

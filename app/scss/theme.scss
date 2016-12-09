@@ -66,15 +66,14 @@
 	}
 }
 
-
 .content-wrapper{
 	.trigger{
 		span{ background-color: $white; }
 	}
 
-  .underline{
-    background-color: $underline-grey;
-  }
+  	.underline{
+    	background-color: $underline-grey;
+  	}
 }
 
 .cta-section--title {
@@ -280,7 +279,6 @@
 
   	@media #{$medium} { 
 		.founder--name, .founder--role, { text-align: left; }
-
   		.founder--name{ font-size: 24px; }
   	}	
 }

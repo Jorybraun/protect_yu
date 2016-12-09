@@ -39,6 +39,57 @@
 	}
 }
 
+.cta-section--video{
+	flex: 1 1 500px;
+	margin-bottom: $gutter;
+	
+	.cta-section--video__wrapper{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 400px;
+		margin-top: $gutter;
+		background: {
+			image: url('../img/macbook.png');
+			repeat: no-repeat;
+			size: contain;
+			position: center;
+
+		}
+	}
+
+	.video--trigger{
+		width: 75px;
+		height: 75px;
+		margin:  auto;
+		background: {
+			image: url('../img/play.png');
+			size: contain;
+			repeat: no-repeat;
+			position: center;
+		}
+	}
+
+	.video{
+		display: none;
+		position: fixed;
+		width: 20px;
+		height: 20px;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+
+		&.open{
+			display: block;
+		}
+
+		&.expand{
+			
+		}
+	}
+}
+
 .content-wrapper{
 	.trigger{
 			position: absolute;
@@ -218,7 +269,7 @@
 		@include flex-wrap(wrap);
 		@include justify-content(center);
 		max-width: 1200px;
-
+		margin: 0 auto;
 	}
 
 	.cta-section--top-logo {
@@ -245,11 +296,12 @@
 	.cta-section--header{
 		text-align: center;
 		flex: 1 0 100%;
+		margin-bottom: 25px;
 		span.underline{
 			margin: 0 auto;
 			display: block;
 			height: 1.5px;
-    	width: 100px;
+    		width: 100px;
 		}
 	}
 
@@ -651,3 +703,4 @@ footer{
 		}
 	}
 }
+

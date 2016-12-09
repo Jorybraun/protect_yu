@@ -268,6 +268,39 @@ footer {
         .side-menu .menu-row ul.language li, .side-menu .menu-row ul.social li {
           margin-right: 10px; }
 
+.cta-section--video {
+  flex: 1 1 500px;
+  margin-bottom: 24px; }
+  .cta-section--video .cta-section--video__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-top: 24px;
+    background-image: url(./img/macbook.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; }
+  .cta-section--video .video--trigger {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    background-image: url(./img/play.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .cta-section--video .video {
+    display: none;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0; }
+    .cta-section--video .video.open {
+      display: block; }
+
 .content-wrapper .trigger {
   position: absolute;
   right: 5px;
@@ -419,7 +452,8 @@ footer {
   flex-wrap: wrap;
   -webkit-justify-content: center;
   justify-content: center;
-  max-width: 1200px; }
+  max-width: 1200px;
+  margin: 0 auto; }
 
 .content-wrapper .cta-section--top-logo {
   position: relative;
@@ -439,7 +473,8 @@ footer {
 
 .content-wrapper .cta-section--header {
   text-align: center;
-  flex: 1 0 100%; }
+  flex: 1 0 100%;
+  margin-bottom: 25px; }
   .content-wrapper .cta-section--header span.underline {
     margin: 0 auto;
     display: block;

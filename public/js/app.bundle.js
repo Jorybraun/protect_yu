@@ -56,6 +56,10 @@
 
 	var _carousel2 = _interopRequireDefault(_carousel);
 
+	var _videoLayover = __webpack_require__(13);
+
+	var _videoLayover2 = _interopRequireDefault(_videoLayover);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -75,6 +79,8 @@
 	    this.sliderImage = '.slider-image';
 	    this.target = '.cta-section';
 	    this.scrollTo = '.scroll-to';
+	    this.videotrigger = '.video--trigger';
+	    this.videoWrapper = '.cta-section--video__wrapper';
 	  }
 
 	  _createClass(App, [{
@@ -82,10 +88,13 @@
 	    value: function init() {
 	      var menu = new _menu2.default(this.body, this.menuTrigger);
 	      var carousel = new _carousel2.default(this.carousel);
+	      var videoLayover = new _videoLayover2.default(this.videotrigger, this.videoWrapper);
 	      var scrollTrigger = document.querySelector(this.scrollTo);
+
 	      // render the carousel component
 	      carousel.init();
 	      menu.init();
+	      videoLayover.init();
 
 	      scrollTrigger.addEventListener('click', function () {
 	        $('html, body').animate({ scrollTop: scrollTrigger.offsetTop + 50 }, 500);
@@ -891,6 +900,57 @@
 	      return !!e("animation");
 	    } };j.csstransitions() && (a.support.transition = new String(f("transition")), a.support.transition.end = i.transition.end[a.support.transition]), j.cssanimations() && (a.support.animation = new String(f("animation")), a.support.animation.end = i.animation.end[a.support.animation]), j.csstransforms() && (a.support.transform = new String(f("transform")), a.support.transform3d = j.csstransforms3d());
 	}(window.Zepto || window.jQuery, window, document);
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var VideoLayover = function () {
+		function VideoLayover(trigger, videoWrapper) {
+			_classCallCheck(this, VideoLayover);
+
+			this.trigger = trigger;
+			this.videoWrapper = videoWrapper;
+		}
+
+		_createClass(VideoLayover, [{
+			key: 'init',
+			value: function init() {
+				var _this = this;
+
+				var trigger = document.querySelector(this.trigger);
+
+				trigger.addEventListener('click', function (e) {
+					e.preventDefault();
+					e.stopPropagation();
+					// animate the trigger to pop;
+					_this.toggleLayover();
+				});
+			}
+		}, {
+			key: 'toggleLayover',
+			value: function toggleLayover() {
+				var wrapper = document.querySelector(this.videoWrapper);
+				var popup = wrapper.querySelector('.video');
+				// disable scroll
+				wrapper.classList.add('');
+			}
+		}]);
+
+		return VideoLayover;
+	}();
+
+	exports.default = VideoLayover;
 
 /***/ }
 /******/ ]);
