@@ -257,10 +257,6 @@ footer {
       list-style: none; }
       .side-menu .menu-row ul li {
         margin: 10px 10px; }
-        .side-menu .menu-row ul li a {
-          color: #ffffff;
-          text-decoration: none;
-          font-weight: 300; }
       .side-menu .menu-row ul.language, .side-menu .menu-row ul.social {
         display: flex;
         align-items: flex-end;
@@ -282,43 +278,50 @@ footer {
     background-size: contain;
     background-position: center; }
   .cta-section--video .video--trigger {
-    width: 75px;
+    cursor: pointer;
     height: 75px;
+    width: 100%;
+    max-width: 75px;
     margin: auto;
+    z-index: 10000;
+    overflow: hidden;
     background-image: url(./img/play.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center; }
   .cta-section--video .video {
-    display: none;
-    position: fixed;
-    width: 20px;
-    height: 20px;
+    position: absolute;
+    left: 0;
     top: 0;
     right: 0;
-    left: 0;
-    bottom: 0; }
-    .cta-section--video .video.open {
-      display: block; }
+    bottom: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .cta-section--video .video .bc-player-default_default {
+      width: 100%;
+      height: 100%; }
 
 .content-wrapper .trigger {
   position: absolute;
   right: 5px;
   top: 5px;
   z-index: 3;
-  margin: 24px 24px; }
+  margin: 24px; }
   .content-wrapper .trigger span {
     display: block;
     width: 25px;
     height: 3.5px;
     margin: 3.5px; }
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 751px) {
     .content-wrapper .trigger {
       display: none; } }
 
 .content-wrapper .menu-row {
   display: none; }
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 751px) {
     .content-wrapper .menu-row {
       display: block;
       position: absolute;
@@ -360,7 +363,7 @@ footer {
   z-index: 2; }
   .content-wrapper .logo-wrapper img {
     width: 100px; }
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 751px) {
     .content-wrapper .logo-wrapper {
       margin-left: 48px; }
       .content-wrapper .logo-wrapper img {
@@ -373,19 +376,19 @@ footer {
   display: block !important;
   position: absolute;
   margin-bottom: 24px; }
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 750px) {
     .content-wrapper .owl-theme .owl-dots {
       bottom: 60px;
       left: 0;
       right: 0; } }
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 751px) {
     .content-wrapper .owl-theme .owl-dots {
       width: 50px;
       bottom: 0;
       right: 0;
       top: 50%; } }
 
-@media only screen and (max-width: 649px) {
+@media only screen and (max-width: 750px) {
   .content-wrapper .owl-theme {
     position: relative; } }
 
@@ -481,7 +484,7 @@ footer {
     height: 1.5px;
     width: 100px; }
 
-@media only screen and (max-width: 649px) {
+@media only screen and (max-width: 750px) {
   .content-wrapper .cta-section--title {
     margin: 15px 24px; } }
 
@@ -505,12 +508,12 @@ footer {
     flex: 0 0 200px;
     height: 50px;
     margin-bottom: 24px; }
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 750px) {
     .content-wrapper .cta-section--detail-block {
       max-width: 350px; }
       .content-wrapper .cta-section--detail-block div.body-text {
         margin: 0 auto; } }
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 751px) {
     .content-wrapper .cta-section--detail-block {
       flex: 1 0 450px;
       max-width: 530px;
@@ -566,7 +569,7 @@ footer {
       .cta-section--offer-block ul li.offer button.btn {
         width: 100%;
         height: 50px; }
-      @media only screen and (min-width: 650px) {
+      @media only screen and (min-width: 751px) {
         .cta-section--offer-block ul li.offer {
           margin: 0;
           flex: 1 0 30%; }
@@ -575,7 +578,7 @@ footer {
             z-index: 200; }
           .cta-section--offer-block ul li.offer.three {
             margin-left: -24px; } }
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 751px) {
       .cta-section--offer-block ul {
         -webkit-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -638,7 +641,7 @@ footer {
   flex-wrap: wrap;
   -webkit-justify-content: center;
   justify-content: center; }
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 751px) {
     .founder--list {
       -webkit-flex-wrap: wrap;
       flex-wrap: wrap; } }
@@ -658,7 +661,7 @@ footer {
   flex-wrap: wrap;
   -webkit-align-items: flex-start;
   align-items: flex-start; }
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 750px) {
     .founder--block .founder--role {
       margin: 0 25px; } }
   .founder--block .btn {
@@ -690,7 +693,7 @@ footer {
       background-size: 140px 170px;
       background-image: url(./img/avatar.png);
       background-repeat: no-repeat; }
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 751px) {
       .founder--block .founder--image-wrapper {
         margin: 0 24px;
         flex: 1 0 200px;
@@ -707,7 +710,7 @@ footer {
     margin: 0 0 12px 0; }
   .founder--block .founder--content-wrapper {
     margin: 0 16px; }
-  @media only screen and (min-width: 650px) {
+  @media only screen and (min-width: 751px) {
     .founder--block {
       -webkit-flex: 1 1 500px;
       flex: 1 1 500px;
@@ -728,7 +731,7 @@ footer {
     -webkit-align-items: center;
     align-items: center;
     margin: 48px 0; }
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 751px) {
       footer .footer--wrapper {
         -webkit-flex-direction: row;
         flex-direction: row;
@@ -739,7 +742,7 @@ footer {
   footer .address--block {
     text-align: center;
     flex: 0 0 150px; }
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 751px) {
       footer .address--block {
         flex: 0 0 200px;
         margin: 0px;
@@ -759,10 +762,10 @@ footer {
     display: inline-flex; }
     footer .icon--block img {
       margin: 0 auto; }
-      @media only screen and (min-width: 650px) {
+      @media only screen and (min-width: 751px) {
         footer .icon--block img {
           margin-top: 1.3em; } }
-      @media only screen and (max-width: 649px) {
+      @media only screen and (max-width: 750px) {
         footer .icon--block img {
           width: 75%;
           height: 75%; } }
@@ -792,7 +795,7 @@ footer {
     footer button i {
       padding-top: 4px;
       padding-left: 4px; }
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 751px) {
       footer button {
         height: 43px;
         width: 200px; } }
@@ -823,7 +826,7 @@ footer {
   font-size: 14.44px;
   font-weight: 300; }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 751px) {
   .owl-slide .slide-text h4 {
     font-size: 35px; }
   .owl-slide .slide-text p {
@@ -889,7 +892,7 @@ footer {
     font-size: 16px;
     font-weight: 300;
     text-align: center; }
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 751px) {
       .cta-section--detail-block p.subtitle {
         text-align: left; } }
   .cta-section--detail-block div.body-text p {
@@ -967,13 +970,13 @@ footer {
     font-family: "Open Sans", sans-serif;
     font-size: 22px;
     font-weight: 100; }
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 751px) {
       .offer-value--section ul li .value-title {
         font-size: 30px; } }
   .offer-value--section ul li .value-body {
     font-family: "Open Sans", sans-serif;
     font-size: 14px; }
-    @media only screen and (min-width: 650px) {
+    @media only screen and (min-width: 751px) {
       .offer-value--section ul li .value-body {
         font-size: 16px; } }
 
@@ -994,7 +997,7 @@ footer {
   text-align: center;
   color: #888888; }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 751px) {
   .founder--block .founder--name, .founder--block .founder--role {
     text-align: left; }
   .founder--block .founder--name {
@@ -1051,3 +1054,40 @@ body.open {
     -ms-transform: translateX(-100%);
     -o-transform: translateX(-100%);
     transform: translateX(-100%); }
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10000000;
+  color: #ffffff;
+  margin: 20px; }
+
+.video--trigger {
+  transition: max-width 0.2s, height 0.6s, position 0.5s; }
+  .video--trigger.opening {
+    animation: pulse 0.5s;
+    top: -120px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    max-width: 700px;
+    height: 500px;
+    background-image: linear-gradient(transparent 0%, #ffffff 50%);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    z-index: 10000; }
+  .video--trigger.open .video {
+    transform: translateX(0%); }
+
+.video {
+  transform: translateX(100%);
+  transition: transform 0.5s; }
+
+@keyframes pulse {
+  0% {
+    background-image: url(./img/play.png);
+    box-shadow: none; }
+  100% {
+    background-image: linear-gradient(transparent 0%, #ffffff 50%);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); } }

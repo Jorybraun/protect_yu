@@ -17,13 +17,13 @@ class App {
     this.target          = '.cta-section';
     this.scrollTo        = '.scroll-to';
     this.videotrigger    = '.video--trigger';
-    this.videoWrapper    = '.cta-section--video__wrapper';
+    this.video           = '.video';
   }
 
   init(){
     const menu = new Menu(this.body, this.menuTrigger);
     const carousel = new Carousel(this.carousel);
-    const videoLayover = new VideoLayover(this.videotrigger, this.videoWrapper);
+    const videoLayover = new VideoLayover(this.videotrigger, this.video);
     const scrollTrigger = document.querySelector(this.scrollTo);
 
     // render the carousel component

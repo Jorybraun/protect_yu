@@ -1,25 +1,68 @@
 class VideoLayover {
-	constructor(trigger, videoWrapper){
-		this.trigger = trigger
-		this.videoWrapper = videoWrapper
+	constructor(trigger, video){
+		this.trigger = trigger;
+		this.video = video;
+		this.firstAnimation = 'opening';
+		this.secondAnimation = 'open';
 	}
 
 	init(){
 		const trigger = document.querySelector(this.trigger);
-		
-		trigger.addEventListener('click', (e) => {
+		const close = trigger.getElementsByClassName('close')[0];
+		// initialize bind on trigger and close
+		this.bindTrigger(trigger);
+		this.bindClose(close, trigger);
+	}
+
+	bindTrigger(el){
+		const self = this;
+		// cb because annomous function cannot be removed on event
+		const clickCB = function(e) { 
 			e.preventDefault();
 			e.stopPropagation();
-			// animate the trigger to pop;
-			this.toggleLayover();
+			// play the animation
+			if($(window).width() < 350){
+				let video = document.getElementById('bcVideo_html5_api');
+				video.webkitRequestFullScreen();
+			}else{
+				self.toggleLayover(el);
+				// remove the click event so that the user may click the video
+				this.removeEventListener('click', clickCB);
+			}
+
+
+		}
+
+		el.addEventListener('click', clickCB);
+	}
+
+	bindClose(close, trigger){
+		close.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			// play the closing animation
+			this.toggleLayover(trigger);
+			// re attache the event listener 
+			this.bindTrigger(trigger);
+			// TODO STOP VIDEO PLAYING
 		});
 	}
 
-	toggleLayover(){
-		const wrapper = document.querySelector(this.videoWrapper);
-		const popup = wrapper.querySelector('.video');
-		// disable scroll
-		wrapper.classList.add('')
+	toggleLayover(el){
+		const self = this;
+		let first = this.firstAnimation;
+		let second = this.secondAnimation;
+
+		// use destructuring to switch class names
+		if(el.classList.contains('open')){
+			[first, second] = [second, first];
+		}
+		// play the first animation
+		el.classList.toggle(first);	
+		// play the second animation
+		setTimeout(() =>  {
+			el.classList.toggle(second);
+		}, 300);
 	}
 }
 
