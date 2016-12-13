@@ -1,4 +1,5 @@
 class VideoLayover {
+
 	constructor(trigger, video){
 		this.trigger = trigger;
 		this.video = video;
@@ -7,36 +8,31 @@ class VideoLayover {
 	}
 
 	init(){
+		const video = document.getElementById('bcVideo_html5_api');
 		const trigger = document.querySelector(this.trigger);
 		const close = trigger.getElementsByClassName('close')[0];
 		// initialize bind on trigger and close
-		this.bindTrigger(trigger);
-		this.bindClose(close, trigger);
+		this.bindTrigger(trigger, video);
+		this.bindClose(close, trigger, video);
+
 	}
 
 	bindTrigger(el){
 		const self = this;
+		let video = document.getElementById('bcVideo_html5_api');
 		// cb because annomous function cannot be removed on event
 		const clickCB = function(e) { 
 			e.preventDefault();
 			e.stopPropagation();
-			// play the animation
-			if($(window).width() < 350){
-				let video = document.getElementById('bcVideo_html5_api');
-				video.webkitRequestFullScreen();
-			}else{
-				self.toggleLayover(el);
-				// remove the click event so that the user may click the video
-				this.removeEventListener('click', clickCB);
-			}
-
-
+			self.toggleLayover(el);
+			// remove the click event so that the user may click the video
+			this.removeEventListener('click', clickCB);
 		}
 
 		el.addEventListener('click', clickCB);
 	}
 
-	bindClose(close, trigger){
+	bindClose(close, trigger, video){
 		close.addEventListener('click', (e) => {
 			e.preventDefault();
 			e.stopPropagation();
@@ -44,7 +40,8 @@ class VideoLayover {
 			this.toggleLayover(trigger);
 			// re attache the event listener 
 			this.bindTrigger(trigger);
-			// TODO STOP VIDEO PLAYING
+			// stop the video from continuing play
+			video.pause();
 		});
 	}
 
@@ -60,9 +57,9 @@ class VideoLayover {
 		// play the first animation
 		el.classList.toggle(first);	
 		// play the second animation
-		setTimeout(() =>  {
+		setTimeout(() => {
 			el.classList.toggle(second);
-		}, 300);
+		}, 500);
 	}
 }
 

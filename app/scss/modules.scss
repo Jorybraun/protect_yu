@@ -22,7 +22,8 @@
 				margin: 10px 10px;
 			}
 			
-			&.language, &.social{
+			&.social,
+			&.language {
 				display: flex;
 				align-items: flex-end;
 				justify-content: flex-end;
@@ -35,7 +36,7 @@
 }
 
 .cta-section--video{
-	flex: 1 1 500px;
+	flex: 1 1 100%;
 	margin-bottom: $gutter;
 	
 	.cta-section--video__wrapper{
@@ -50,13 +51,18 @@
 			size: contain;
 			position: center;
 		}
+
+		@media #{$mobile}{
+			height: auto;
+		}
 	}
 
 	.video--trigger{
 		cursor: pointer;
+		position: relative;
 		height: 75px;
 		width: 100%;
-  	max-width: 75px;
+  		max-width: 75px;
 		margin:  auto;
 		z-index: 10000;
 		overflow: hidden;
@@ -82,7 +88,32 @@
 		.bc-player-default_default{
 			width: 100%;
 			height: 100%;
+			
+			.vjs-big-play-button{
+    			left: 0 ;
+    			right: 0 ;
+    			top: 42%;
+    			bottom: 0;
+    			margin: 0 auto ;
+			}
+
 		}
+	}
+	
+	@media #{$mobile}{ display: none; }
+}
+
+.bc-player-default_default.vjs-mouse .vjs-big-play-button{
+	left: 0 ;
+	right: 0 ;
+	bottom: 0;
+	margin: 0 auto ;
+}
+
+.mobile__cta-seciont--video{
+	display: none;
+	@media #{$mobile}{
+		display: initial;
 	}
 }
 
@@ -116,6 +147,7 @@
 			ul{
 				display: inline-flex;
 				align-items: flex-end;
+				
 				li{
 					margin-left: $gutter / 2; 
 					list-style: none;
@@ -309,31 +341,40 @@
 
 	.cta-section--detail-block{
 		@include display-flex;
-	  @include flex-direction(row);
-	  @include flex-wrap(wrap);
-	  @include align-items(center);
-	  @include justify-content(center);
-	  margin: 0 $gutter / 2;
+	  	@include flex-direction(row);
+	  	@include flex-wrap(wrap);
+	  	@include align-items(center);
+	  	@include justify-content(center);
+	  	margin: 0 $gutter / 2;
 
 		h3, p.subtitle,{
 			margin: 10px $gutter;
 		}
 
-		div.body-text{
+		.body-text{
 			p{
 				margin: $gutter / 2;
 			}
+		}
+
+		.cta-section--cta-row{
+			flex-flow: row wrap;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 24px;
 		}
 		
 		button{
 			flex: 0 0 200px;
 			height: 50px;
-			margin-bottom: $gutter;
+			//margin-bottom: $gutter;
 		}
 
 		@media #{$mobile}{
 			max-width: 350px;
-			div.body-text{
+			.body-text{
 				margin: 0 auto;
 			}
 		}
@@ -362,11 +403,24 @@
 		}
 		@media #{$large}{
 			@include justify-content(flex-start);
-
+			@include flex-direction(column);
+			
 			h3, p.subtitle{
 				text-align: left;
 			}
+
+			.cta-section--cta-row{
+				flex-flow: row wrap;
+				width: 100%;
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+			}
 		}
+
+
+
+
 	}
 }
 
@@ -381,7 +435,7 @@
 		@include display-flex;
   		@include flex-direction(row);
   		@include flex-wrap(wrap);
-  		@include align-items(center);
+  		@include align-items(flex-start);
   		@include justify-content(center);
 
 		li.offer{

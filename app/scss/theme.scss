@@ -13,6 +13,14 @@
 		font-family: $openSans;
 		font-weight: 400;
 		font-size: 14px;
+
+		a{
+			color: $white;
+			text-decoration: none;
+			&:visited{
+				color: $white;
+			}
+		}
 	}
 }
 
@@ -203,6 +211,7 @@
 				.btn{
 					@include background-image($orangeButtonGradient);
 				}
+				.offer-length .year,
 				.percentage{
 					color: $cta-light-orange;
 					font-weight: 400;
@@ -213,6 +222,7 @@
 				.btn{
 					@include background-image($blueButtonGradient);
 				}
+				.offer-length .year,
 				.percentage{
 					color: $cta-light-blue;
 					font-weight: 400;
@@ -223,6 +233,14 @@
 				.btn{
 					@include background-image($redButtonGradient);
 				}
+				
+				.offer-length .year,
+				.percentage{
+					color: $lightRed;
+					font-weight: 400;
+				}
+
+
 			}
 		}
 	}

@@ -12,9 +12,10 @@ $footer-grey: #aaaaaa;
 $topBlue: #61bfeb;
 $bottomBlue: #0193d8;
 
+$lightRed: rgb(237,28,36);
 
 //Gradients
-$redButtonGradient: linear-gradient(rgb(237,28,36) 0%, rgb(176,3,9) 100%);
+$redButtonGradient: linear-gradient($lightRed 0%, rgb(176,3,9) 100%);
 $blueButtonGradient: linear-gradient($topBlue 0%, $bottomBlue 100%);
 $orangeButtonGradient: linear-gradient(rgb(249,157,27) 0%, rgb(222,132,5) 100%);
 
