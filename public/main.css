@@ -264,6 +264,17 @@ footer {
         .side-menu .menu-row ul.social li, .side-menu .menu-row ul.language li {
           margin-right: 10px; }
 
+.flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .cta-section--video {
   flex: 1 1 100%;
   margin-bottom: 24px; }
@@ -369,18 +380,18 @@ footer {
             position: absolute;
             display: none; }
         .content-wrapper .menu-row ul.language {
-          border-left: 2px solid #ffffff; }
+          border-left: 2px solid #ffffff;
+          position: absolute;
+          display: block;
+          content: "";
+          width: 12px;
+          height: 7px;
+          right: -15px;
+          top: 19px; }
           .content-wrapper .menu-row ul.language li:first-child:after {
             background-image: url(./img/dropdown.svg);
             background-repeat: none;
-            background-size: 100% 100%;
-            position: absolute;
-            display: block;
-            content: "";
-            width: 12px;
-            height: 7px;
-            right: -15px;
-            top: 19px; } }
+            background-size: 100% 100%; } }
 
 .content-wrapper .logo-wrapper {
   margin: 24px 24px;
@@ -490,14 +501,14 @@ footer {
   margin-bottom: 75px; }
   .content-wrapper .cta-section--top-logo:before {
     position: absolute;
-    background-image: url(./img/top-icon.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
     display: block;
     content: "";
     height: 213px;
-    width: 231px; }
+    width: 231px;
+    background-image: url(./img/top-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; }
 
 .content-wrapper .cta-section--header {
   text-align: center;
@@ -525,6 +536,8 @@ footer {
   -webkit-justify-content: center;
   justify-content: center;
   margin: 0 12px; }
+  .content-wrapper .cta-section--detail-block .detail-block--header {
+    margin-top: 24px; }
   .content-wrapper .cta-section--detail-block h3, .content-wrapper .cta-section--detail-block p.subtitle {
     margin: 10px 24px; }
   .content-wrapper .cta-section--detail-block .body-text p {
@@ -536,6 +549,11 @@ footer {
     justify-content: center;
     align-items: center;
     margin-top: 24px; }
+    .content-wrapper .cta-section--detail-block .cta-section--cta-row .cta-gradient-blue {
+      padding: 0 36px; }
+    @media only screen and (max-width: 750px) {
+      .content-wrapper .cta-section--detail-block .cta-section--cta-row a {
+        margin-top: 24px; } }
   .content-wrapper .cta-section--detail-block button {
     flex: 0 0 200px;
     height: 50px; }
@@ -748,7 +766,18 @@ footer {
   .founder--block .founder--name {
     margin: 0 0 12px 0; }
   .founder--block .founder--content-wrapper {
-    margin: 0 16px; }
+    margin: 0 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center; }
+    .founder--block .founder--content-wrapper form {
+      margin: 0 24px; }
+    @media only screen and (min-width: 950px) {
+      .founder--block .founder--content-wrapper {
+        justify-content: flex-start; }
+        .founder--block .founder--content-wrapper form {
+          margin: 0 24px 0 0; } }
   @media only screen and (min-width: 751px) {
     .founder--block {
       -webkit-flex: 1 1 500px;
@@ -842,6 +871,19 @@ footer {
 .btn {
   border: none;
   color: #ffffff; }
+
+.flash {
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Open Sans", sans-serif; }
+  .flash.invalid {
+    background: #ffe200;
+    color: #000000; }
+  .flash.error {
+    background: #ed1c24; }
+  .flash.success {
+    background: #61bfeb; }
 
 .side-menu {
   background-color: #000000; }
@@ -1030,7 +1072,9 @@ footer {
       .offer-value--section ul li .value-body {
         font-size: 16px; } }
 
-.founder--block .founder--role, .founder--block .founder--name, .founder--block .founder--bio {
+.founder--block .founder--role,
+.founder--block .founder--name,
+.founder--block .founder--bio {
   font-family: "Open Sans", sans-serif;
   font-weight: 300; }
 
@@ -1048,7 +1092,8 @@ footer {
   color: #888888; }
 
 @media only screen and (min-width: 751px) {
-  .founder--block .founder--name, .founder--block .founder--role {
+  .founder--block .founder--name,
+  .founder--block .founder--role {
     text-align: left; }
   .founder--block .founder--name {
     font-size: 24px; } }
@@ -1060,7 +1105,8 @@ footer {
     font-weight: 300;
     font-family: "Open Sans", sans-serif;
     font-size: 18px; }
-  footer .address--street, footer .address--phone {
+  footer .address--street,
+  footer .address--phone {
     color: #aaaaaa;
     font-weight: 300;
     font-family: "Open Sans", sans-serif;
@@ -1068,6 +1114,10 @@ footer {
     margin: 0 24px; }
   footer .social-media--block li {
     color: #aaaaaa; }
+    footer .social-media--block li a {
+      color: #ffffff; }
+    footer .social-media--block li a:visited {
+      color: #ffffff; }
   footer .contact-form--block label {
     color: #ffffff; }
   footer .contact-form--block .flex-fieldset {
@@ -1076,7 +1126,8 @@ footer {
     background-color: #000000;
     border: none;
     font-style: italic;
-    font-weight: 300; }
+    font-weight: 300;
+    color: #ffffff; }
   footer .contact-form--block button {
     background-color: #ffe200;
     color: black;
@@ -1134,6 +1185,13 @@ video:-webkit-full-screen {
     z-index: 10000; }
   .video--trigger.open .video {
     transform: translateX(0%); }
+
+.flash {
+  transform: translateY(-75px);
+  will-change: transform;
+  transition: transform 0.5s, background 1s; }
+  .flash.success, .flash.invalid, .flash.error {
+    transform: translateY(0px); }
 
 .video {
   transform: translateX(100%);

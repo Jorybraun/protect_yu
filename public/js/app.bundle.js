@@ -60,14 +60,22 @@
 
 	var _videoLayover2 = _interopRequireDefault(_videoLayover);
 
+	var _mailChimp = __webpack_require__(9);
+
+	var _mailChimp2 = _interopRequireDefault(_mailChimp);
+
+	var _flash = __webpack_require__(16);
+
+	var _flash2 = _interopRequireDefault(_flash);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	__webpack_require__(9);
 	__webpack_require__(10);
 	__webpack_require__(11);
-	__webpack_require__(13);
+	__webpack_require__(12);
+	__webpack_require__(14);
 
 	var App = function () {
 	  function App() {
@@ -81,20 +89,24 @@
 	    this.scrollTo = '.scroll-to';
 	    this.videotrigger = '.video--trigger';
 	    this.video = '.video';
+	    this.contactForm = '.news-letter--signup';
+	    this.flash = '.flash';
 	  }
 
 	  _createClass(App, [{
 	    key: 'init',
 	    value: function init() {
+	      var flash = new _flash2.default(this.flash);
 	      var menu = new _menu2.default(this.body, this.menuTrigger);
 	      var carousel = new _carousel2.default(this.carousel);
+	      var mailChimp = new _mailChimp2.default(this.contactForm, flash);
 	      var videoLayover = new _videoLayover2.default(this.videotrigger, this.video);
 	      var scrollTrigger = document.querySelector(this.scrollTo);
-
 	      // render the carousel component
 	      carousel.init();
 	      menu.init();
 	      videoLayover.init();
+	      mailChimp.init();
 
 	      scrollTrigger.addEventListener('click', function () {
 	        $('html, body').animate({ scrollTop: scrollTrigger.offsetTop + 50 }, 500);
@@ -299,19 +311,91 @@
 /* 9 */
 /***/ function(module, exports) {
 
-	module.exports = "module.exports = __webpack_public_path__ + \"index.html\";";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var MailChimp = function () {
+		function MailChimp(form, flash) {
+			_classCallCheck(this, MailChimp);
+
+			this.form = form;
+			this.flash = flash;
+		}
+
+		_createClass(MailChimp, [{
+			key: 'init',
+			value: function init() {
+				var _this = this;
+
+				var form = document.querySelector(this.form);
+
+				form.addEventListener('submit', function (e) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					var email = form.elements["email"].value;
+
+					if (_this.validateEmail(email)) {
+						_this.sendPromise(email, form.dataset.lang);
+					} else {
+						_this.flash.triggerFlash('email', form.dataset.lang, 'invalid');
+					}
+				});
+			}
+		}, {
+			key: 'validateEmail',
+			value: function validateEmail(email) {
+				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return re.test(email);
+			}
+		}, {
+			key: 'sendPromise',
+			value: function sendPromise(email, lang) {
+				var _this2 = this;
+
+				var url = 'http://protectyu.azzimov.com/mail.php?email=' + email + '&lang=' + lang;
+
+				fetch(url, {
+					method: 'post'
+				}).then(function (response) {
+					if (response === 200) {
+						_this2.flash.triggerFlash('email', 'success', lang);
+					}
+				}).catch(function (err) {
+					// Error :(	
+				});
+			}
+		}]);
+
+		return MailChimp;
+	}();
+
+	exports.default = MailChimp;
 
 /***/ },
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = "module.exports = __webpack_public_path__ + \"english_index.html\";";
+	module.exports = "module.exports = __webpack_public_path__ + \"index.html\";";
 
 /***/ },
 /* 11 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = __webpack_public_path__ + \"english_index.html\";";
+
+/***/ },
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(12)();
+	exports = module.exports = __webpack_require__(13)();
 	// imports
 
 
@@ -322,7 +406,7 @@
 
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	/*
@@ -378,7 +462,7 @@
 
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -993,6 +1077,90 @@
 	      return !!e("animation");
 	    } };j.csstransitions() && (a.support.transition = new String(f("transition")), a.support.transition.end = i.transition.end[a.support.transition]), j.cssanimations() && (a.support.animation = new String(f("animation")), a.support.animation.end = i.animation.end[a.support.animation]), j.csstransforms() && (a.support.transform = new String(f("transform")), a.support.transform3d = j.csstransforms3d());
 	}(window.Zepto || window.jQuery, window, document);
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var flashResponse = {
+
+		'email': {
+			invalid: {
+				en: 'The email you entered is invalid',
+				fr: ''
+			},
+
+			'success': {
+				en: 'Thank you for signing up :)',
+				fr: ''
+			},
+
+			'failure': {
+				en: 'Your email was not successfully registered please try again',
+				fr: ''
+			}
+		}
+
+	};
+
+	exports.default = flashResponse;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _flashResponse = __webpack_require__(15);
+
+	var _flashResponse2 = _interopRequireDefault(_flashResponse);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Flash = function () {
+		function Flash(el) {
+			_classCallCheck(this, Flash);
+
+			this.wrapper = el;
+		}
+
+		_createClass(Flash, [{
+			key: 'getMessage',
+			value: function getMessage(type, language, status) {
+				var response = _flashResponse2.default;
+				return response[type][status][language];
+			}
+		}, {
+			key: 'triggerFlash',
+			value: function triggerFlash(type, language, status) {
+				var flash = document.querySelector(this.wrapper);
+				flash.classList.add(status);
+				// could add this message in the css before
+				flash.innerHTML = this.getMessage(type, language, status);
+				// hide the status after 5 seconds
+				setTimeout(function () {
+					flash.classList.remove(status);
+				}, 5000);
+			}
+		}]);
+
+		return Flash;
+	}();
+
+	exports.default = Flash;
 
 /***/ }
 /******/ ]);

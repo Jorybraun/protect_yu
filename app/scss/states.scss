@@ -29,7 +29,7 @@ video:-webkit-full-screen {
   transition: max-width 0.2s, height 0.6s, position 0.5s;
   &.opening{ 
     animation: pulse 0.5s;
-    top: -120px;
+    top: -120px; //TODO* REMOVE THIS FROM STATE
     right: 0;
     left: 0;
     bottom: 0;
@@ -43,6 +43,18 @@ video:-webkit-full-screen {
 
   &.open .video{
     transform: translateX(0%);
+  }
+}
+
+.flash{
+  transform: translateY(-75px);
+  will-change: transform;
+  transition: transform 0.5s, background 1s;
+
+  &.success, 
+  &.invalid,
+  &.error{
+    transform: translateY(0px);
   }
 }
 

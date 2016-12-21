@@ -3,6 +3,27 @@
 	color: $white;
 }
 
+.flash{
+	color: $white;
+	text-align: center;
+	font-size: 24px;
+	font-family:  $openSans;
+	
+	&.invalid{
+		background: $yellow;
+		color: $black;
+	}
+
+	&.error{
+		background: $lightRed;
+	}
+
+	&.success{
+		background: $topBlue;
+	}
+
+}
+
 .side-menu{
 	background-color: $black;
 	.trigger{
@@ -274,7 +295,9 @@
 
 .founder--block{
 
-	.founder--role, .founder--name, .founder--bio{
+	.founder--role, 
+	.founder--name, 
+	.founder--bio{
 		font-family: $openSans;
 		font-weight: 300;
 	}
@@ -296,7 +319,8 @@
 	}
 
   	@media #{$medium} { 
-		.founder--name, .founder--role, { text-align: left; }
+		.founder--name, 
+		.founder--role { text-align: left; }
   		.founder--name{ font-size: 24px; }
   	}	
 }
@@ -310,7 +334,8 @@ footer{
 		font-size: 18px;
 	}
 
-	.address--street, .address--phone{
+	.address--street,
+	 .address--phone{
 		color: $footer-grey;
 		font-weight: 300;
 		font-family: $openSans;
@@ -320,7 +345,13 @@ footer{
 	
 	.social-media--block{
 		li{
-			color: $footer-grey
+			color: $footer-grey;
+			
+			a{ color: $white; }
+
+			a:visited{
+				color: $white;
+			}
 		}
 	}
 
@@ -338,6 +369,7 @@ footer{
 			border: none;
 			font-style: italic;
 			font-weight: 300;
+			color: $white;
 		}
 
 		 button{
@@ -349,13 +381,5 @@ footer{
 			font-weight: 500;
 			font-family: $openSans;
 		}
-	}
-	
+	}	
 }
-
-
-
-
-
-
-
