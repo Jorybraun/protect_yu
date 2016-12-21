@@ -1,19 +1,19 @@
 const flashResponse = {
 
 	'email': {
-		invalid: {
+		'invalid': {
 			en: 'The email you entered is invalid',
-			fr: '',
+			fr: 'L\'e-mail que vous avez entré n\'est pas valide',
 		},
 
 		'success': {
 			en: 'Thank you for signing up :)',
-			fr: '',
+			fr: 'Merci de vous être inscrit :)',
 		},
 
 		'failure': {
 			en: 'Your email was not successfully registered please try again',
-			fr: '',
+			fr: 'Votre email n\'a pas été enregistré avec succès, veuillez réessayer',
 		} 
 	},
 

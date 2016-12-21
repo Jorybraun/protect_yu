@@ -14,7 +14,6 @@ class Flash {
 	triggerFlash(type, language, status){
 		const flash = document.querySelector(this.wrapper);
 		flash.classList.add(status);
-		// could add this message in the css before
 		flash.innerHTML = this.getMessage(type, language, status);
 		// hide the status after 5 seconds
 		setTimeout(()=> { flash.classList.remove(status) }, 5000);

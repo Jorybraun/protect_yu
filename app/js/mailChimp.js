@@ -28,16 +28,16 @@ class MailChimp {
 	}
 
 	sendPromise(email, lang){
-		const url = `http://protectyu.azzimov.com/mail.php?email=${email}&lang=${lang}`;
+		const url = `http://protectyu.azzimov.com/mail.php?email=${email}&lang=${lang}`; 		
 
 		fetch(url, {
 			method: 'post'
 		}).then((response) => {
-			if(response === 200){
-				this.flash.triggerFlash('email', 'success', lang);	
+			if(response.status === 200){
+				this.flash.triggerFlash('email', lang, 'success');	
 			}
-		}).catch(function(err) {
-		// Error :(	
+		}).catch((err) => {
+			this.flash.triggerFlash('email', lang, 'failure');
 		});
 	}
 
