@@ -183,12 +183,8 @@
 
 				&.language{
 					border-left: 2px solid $white;
-					position: absolute;
 					display: block;
-					content: "";
-					width: 12px;
-					height: 7px;
-					right: -15px;
+					right: 0px;
     				top: 19px;
 
 					li:first-child:after{

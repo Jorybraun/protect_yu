@@ -3,6 +3,10 @@
 	color: $white;
 }
 
+a.scroll-to{
+	text-decoration: none;
+}
+
 .flash{
 	color: $white;
 	text-align: center;
@@ -21,7 +25,6 @@
 	&.success{
 		background: $topBlue;
 	}
-
 }
 
 .side-menu{
@@ -370,6 +373,17 @@ footer{
 			font-style: italic;
 			font-weight: 300;
 			color: $white;
+			&.invalid{
+				border: 1px solid $yellow;
+			}
+
+			&.error{
+				border: 1px solid $lightRed;
+			}
+
+			&.succss{
+				border: 1px solid $topBlue;
+			}
 		}
 
 		 button{

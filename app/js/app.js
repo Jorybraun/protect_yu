@@ -37,7 +37,9 @@ class App {
     videoLayover.init();
     mailChimp.init();
 
-    scrollTrigger.addEventListener('click', () => {
+    scrollTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       $('html, body').animate({scrollTop: scrollTrigger.offsetTop + 50}, 500);
     });
   }

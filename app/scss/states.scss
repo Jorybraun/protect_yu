@@ -3,6 +3,12 @@
   @include transition-timing-function( 1s ease-in-out);
 }
 
+form {
+  button:hover{  
+    cursor: pointer;
+  } 
+}
+
 body.open{
   overflow: hidden;
   .side-menu{
@@ -47,8 +53,8 @@ video:-webkit-full-screen {
 }
 
 .flash{
-  transform: translateY(-75px);
   will-change: transform;
+  transform: translateY(-75px);
   transition: transform 0.5s, background 1s;
 
   &.success, 
@@ -63,7 +69,6 @@ video:-webkit-full-screen {
   transition: transform 0.5s;
   will-change: transform; 
 }
-
 
 @keyframes pulse {
   0% {

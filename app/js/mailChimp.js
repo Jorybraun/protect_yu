@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+
 class MailChimp {
 	
 	constructor(form, flash){
@@ -18,6 +20,7 @@ class MailChimp {
 				this.sendPromise(email, form.dataset.lang);
 			}else{
 				this.flash.triggerFlash('email', form.dataset.lang, 'invalid');
+				this.clearForm('invalid');
 			}
 		});
 	}
@@ -27,6 +30,13 @@ class MailChimp {
   		return re.test(email);
 	}
 
+	clearForm(status){
+		const form = document.querySelector(this.form);
+		const email = form.elements["email"];
+		email.value = "";
+		email.classList.add(status);
+	}
+
 	sendPromise(email, lang){
 		const url = `http://protectyu.azzimov.com/mail.php?email=${email}&lang=${lang}`; 		
 
@@ -34,10 +44,15 @@ class MailChimp {
 			method: 'post'
 		}).then((response) => {
 			if(response.status === 200){
-				this.flash.triggerFlash('email', lang, 'success');	
+				this.flash.triggerFlash('email', lang, 'success');
+				this.clearForm('success');	
+			}else{
+				this.flash.triggerFlash('email', lang, 'failure');
+				this.clearForm('failure');
 			}
 		}).catch((err) => {
 			this.flash.triggerFlash('email', lang, 'failure');
+			this.clearForm('failure');
 		});
 	}
 

@@ -14,7 +14,6 @@ class VideoLayover {
 		// initialize bind on trigger and close
 		this.bindTrigger(trigger, video);
 		this.bindClose(close, trigger, video);
-
 	}
 
 	bindTrigger(el){
@@ -46,10 +45,8 @@ class VideoLayover {
 	}
 
 	toggleLayover(el){
-		const self = this;
 		let first = this.firstAnimation;
 		let second = this.secondAnimation;
-
 		// use destructuring to switch class names
 		if(el.classList.contains('open')){
 			[first, second] = [second, first];
