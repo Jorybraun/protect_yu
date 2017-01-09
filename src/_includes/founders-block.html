@@ -1,7 +1,7 @@
 <ul class="founder--list">
 
   {% for founder in site.founders  %}
-    <li class="founder--block">
+    <li class="founder--block {{ founder.class }}">
       <div class="founder--image-wrapper {{ founder.class }}"></div>
       <div class="founder--content-wrapper">
         <h4 class="founder--name">{{ founder.name }}</h4>
@@ -17,8 +17,8 @@
     </li>
   {% endfor %}
 
-    <li class="founder--block">
-      <div class="founder--image-wrapper avatar"></div>
+    <li class="founder--block avatar">
+      <div class="founder--image-wrapper"></div>
       <div class="founder--content-wrapper">
         <h1 class="founder--name"> {% t founder-cta.title %} </h1>
         <form class="form-btn" action="https://www.gotroo.com/en/fund-raising-view/99/protect-yu/" method='get'>

@@ -481,6 +481,7 @@ header {
 				}
 
 				&.three{
+					order: 1;
 					margin-left: -$gutter;
 				}
 
@@ -588,82 +589,99 @@ header {
 		padding: 15px 50px;
 	}
 	
-	.founder--image-wrapper{
-		margin: 0 auto;
-		flex: 0 0 140px;
-		height: 170px;
-
-		&.piere{
+	&.piere{
+		order: -1;
+		.founder--image-wrapper{
 			background: {
 				image: url('../assets/img/piere-g-fillion.png');
 				repeat: no-repeat;
 			}
+			@media #{$medium}{
+				background: {
+					image: url('../assets/img/piere-g-fillion-lrg.png');
+					repeat: no-repeat;
+				}
+			}
 		}
+	}
 
-		&.michel{
+	&.michel{
+		.founder--image-wrapper{
 			background: {
 				image: url('../assets/img/michel-junea-katsuya.png');
 				repeat: no-repeat;
 			}
+			@media #{$medium}{
+				background: {
+					image: url('../assets/img/michel-junea-katsuya-lrg.png');
+					repeat: no-repeat;
+				}
+			}
 		}
+	}
 
-		&.michel-wilson{
+	&.michel-wilson{
+		.founder--image-wrapper{
 			background: {
 				size:  140px 165px;
 				image: url('../assets/img/michel-wilson.png');
 				repeat: no-repeat;
 			}
 		}
+	}
 
-		&.richard-thouin{
+	&.richard-thouin{
+		.founder--image-wrapper{
 			background: {
 				size: 140px 170px;
 				image: url('../assets/img/richard-thouin.png');
 				repeat: no-repeat;
 			}
 		}
+	}
 
-		&.mario-fillion{
+	&.mario-fillion{
+		order: 2;
+		.founder--image-wrapper{
 			background: {
 				size: 140px 170px;
 				image: url('../assets/img/mario-fillion.png');
 				repeat: no-repeat;
 			}
-		}	
+		}
+	}	
 
-		&.avatar{
+	&.avatar{
+		order: 3;
+		.founder--image-wrapper{
 			background: {
 				size: 140px 170px;
 				image: url('../assets/img/avatar.png');
 				repeat: no-repeat;
 			}
-		}	
+		}
+	}
+
+	&.michel-wilson,
+	&.avatar,
+	&.mario-fillion,
+	&.richard-thouin, {
+        @media #{$medium}{
+        	.founder--image-wrapper{
+        		background-size: 100% 230px;	
+        	}
+        }
+	}	
+
+	.founder--image-wrapper{
+		margin: 0 auto;
+		flex: 0 0 140px;
+		height: 170px;
 
 		@media #{$medium}{
 			margin: 0 $gutter;
 			flex: 0 0 200px;
 			height: 250px;
-
-			&.piere{
-				background: {
-					image: url('../assets/img/piere-g-fillion-lrg.png');
-					repeat: no-repeat;
-				}
-			}
-
-			&.michel{
-				background: {
-					image: url('../assets/img/michel-junea-katsuya-lrg.png');
-					repeat: no-repeat;
-				}
-			}
-
-			&.michel-wilson,
-			&.avatar,
-			&.mario-fillion,
-			&.richard-thouin, {
-				background-size: 100% 230px;
-			}
 		}
 	}
 

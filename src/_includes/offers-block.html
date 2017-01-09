@@ -13,7 +13,7 @@
     </p>
   </div>
    <p class="offer-length">
-    {% t offer-length %} <span class="year"> {{ offer.years }} years. </span>
+    {% t offer-length %} <span class="year"> {{ offer.years }} {% if offer.years > 1 %} {% t years %} {% else %} {% t year %} {% endif %} </span>
   </p>  
 </li>
 {% endfor %}

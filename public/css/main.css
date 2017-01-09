@@ -368,6 +368,7 @@ header .menu-row {
             margin-left: -24px;
             z-index: 200; }
           .cta-section--offer-block ul li.offer.three {
+            order: 1;
             margin-left: -24px; } }
     @media only screen and (min-width: 751px) {
       .cta-section--offer-block ul {
@@ -440,45 +441,54 @@ header .menu-row {
   .founder--block .btn {
     margin: 12px 0;
     padding: 15px 50px; }
+  .founder--block.piere {
+    order: -1; }
+    .founder--block.piere .founder--image-wrapper {
+      background-image: url("../assets/img/piere-g-fillion.png");
+      background-repeat: no-repeat; }
+      @media only screen and (min-width: 751px) {
+        .founder--block.piere .founder--image-wrapper {
+          background-image: url("../assets/img/piere-g-fillion-lrg.png");
+          background-repeat: no-repeat; } }
+  .founder--block.michel .founder--image-wrapper {
+    background-image: url("../assets/img/michel-junea-katsuya.png");
+    background-repeat: no-repeat; }
+    @media only screen and (min-width: 751px) {
+      .founder--block.michel .founder--image-wrapper {
+        background-image: url("../assets/img/michel-junea-katsuya-lrg.png");
+        background-repeat: no-repeat; } }
+  .founder--block.michel-wilson .founder--image-wrapper {
+    background-size: 140px 165px;
+    background-image: url("../assets/img/michel-wilson.png");
+    background-repeat: no-repeat; }
+  .founder--block.richard-thouin .founder--image-wrapper {
+    background-size: 140px 170px;
+    background-image: url("../assets/img/richard-thouin.png");
+    background-repeat: no-repeat; }
+  .founder--block.mario-fillion {
+    order: 2; }
+    .founder--block.mario-fillion .founder--image-wrapper {
+      background-size: 140px 170px;
+      background-image: url("../assets/img/mario-fillion.png");
+      background-repeat: no-repeat; }
+  .founder--block.avatar {
+    order: 3; }
+    .founder--block.avatar .founder--image-wrapper {
+      background-size: 140px 170px;
+      background-image: url("../assets/img/avatar.png");
+      background-repeat: no-repeat; }
+  @media only screen and (min-width: 751px) {
+    .founder--block.michel-wilson .founder--image-wrapper, .founder--block.avatar .founder--image-wrapper, .founder--block.mario-fillion .founder--image-wrapper, .founder--block.richard-thouin .founder--image-wrapper {
+      background-size: 100% 230px; } }
   .founder--block .founder--image-wrapper {
     margin: 0 auto;
     flex: 0 0 140px;
     height: 170px; }
-    .founder--block .founder--image-wrapper.piere {
-      background-image: url("../assets/img/piere-g-fillion.png");
-      background-repeat: no-repeat; }
-    .founder--block .founder--image-wrapper.michel {
-      background-image: url("../assets/img/michel-junea-katsuya.png");
-      background-repeat: no-repeat; }
-    .founder--block .founder--image-wrapper.michel-wilson {
-      background-size: 140px 165px;
-      background-image: url("../assets/img/michel-wilson.png");
-      background-repeat: no-repeat; }
-    .founder--block .founder--image-wrapper.richard-thouin {
-      background-size: 140px 170px;
-      background-image: url("../assets/img/richard-thouin.png");
-      background-repeat: no-repeat; }
-    .founder--block .founder--image-wrapper.mario-fillion {
-      background-size: 140px 170px;
-      background-image: url("../assets/img/mario-fillion.png");
-      background-repeat: no-repeat; }
-    .founder--block .founder--image-wrapper.avatar {
-      background-size: 140px 170px;
-      background-image: url("../assets/img/avatar.png");
-      background-repeat: no-repeat; }
     @media only screen and (min-width: 751px) {
       .founder--block .founder--image-wrapper {
         margin: 0 24px;
         flex: 0 0 200px;
-        height: 250px; }
-        .founder--block .founder--image-wrapper.piere {
-          background-image: url("../assets/img/piere-g-fillion-lrg.png");
-          background-repeat: no-repeat; }
-        .founder--block .founder--image-wrapper.michel {
-          background-image: url("../assets/img/michel-junea-katsuya-lrg.png");
-          background-repeat: no-repeat; }
-        .founder--block .founder--image-wrapper.michel-wilson, .founder--block .founder--image-wrapper.avatar, .founder--block .founder--image-wrapper.mario-fillion, .founder--block .founder--image-wrapper.richard-thouin {
-          background-size: 100% 230px; } }
+        height: 250px; } }
   .founder--block .founder--name {
     margin: 0 0 12px 0; }
   .founder--block .founder--content-wrapper {
