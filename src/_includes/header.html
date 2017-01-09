@@ -1,0 +1,42 @@
+<div class="logo-wrapper">
+
+   <a class="site-title" href="{{ site.baseurl }}/"> <img src='{{ "/assets/img/header-logo.png" | prepend: site.baseurl_root }}' alt=""></a>
+
+</div>
+
+<div class="menu-row">
+  <ul>
+    <li> <a href="{{ site.baseurl }}/comming-soon">{% t service-blocks.title.one %}</a> </li>
+    <li> <a href="{{ site.baseurl }}/comming-soon">{% t service-blocks.title.two %}</a> </li>
+    <li> <a href="{{ site.baseurl }}/comming-soon">{% t service-blocks.title.three %}</a> </li>
+    <li> <a href="https://www.gotroo.com/en/fund-raising-view/99/protect-yu/"><img src='{{ "/assets/img/logo_gotroo.png" | prepend: site.baseurl_root }}' alt=""> </a> </li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.youtube.com/channel/UCXcx78yGApb1nkmlpZTpxLA"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/protectyu/">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/protect-yu"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul class="language drop-down">
+        {% if site.lang == "fr" %}
+          {% capture link1 %}{{ site.baseurl_root }}{{ page.url }}{% endcapture %}
+            <li>FR</li>
+            <li><a href="{{ link1 }}" >EN</a></li>
+          {% elsif site.lang == "en" %}
+          {% capture link2 %}/fr{{ page.url }}{% endcapture %}
+            <li>EN</li>
+            <li><a href="{{ link2 }}" >FR</a></li>
+          {% endif %}
+      </ul>
+    </li>
+  </ul>
+</div>

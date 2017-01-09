@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+        
+    <div class="flash"></div>
+    {% include side-menu.html %}
+    <div id="root"></div>
+    
+    <header class="site-header">
+      {% include header.html %}
+      {% include trigger.html %}
+    </header>
+
+    <div id="content-wrapper" class="content-wrapper">
+        {{ content }}
+    </div>
+
+    {% include footer.html %}
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+    <script src="https://players.brightcove.net/4218124750001/default_default/index.min.js"></script>
+     <script type="text/javascript" src="/assets/javascripts/bundle.js" charset="utf-8"></script>
+  
+  </body>
+  
+</html>

@@ -1,0 +1,64 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+$black: #000000;
+$white: #ffffff;
+$offWhite: #f6f5f7;
+$underline-grey:  #cccccc;
+$subtitle-grey: #adadad;
+$subtitle-dark-grey: #888888;
+$cta-light-blue: #0093d8;
+$cta-light-orange: #df8506;
+$yellow: #ffe200;
+$footer-grey: #aaaaaa;
+$topBlue: #61bfeb;
+$bottomBlue: #0193d8;
+$lightRed: rgb(237,28,36);
+
+//Gradients
+$redButtonGradient: linear-gradient($lightRed 0%, rgb(176,3,9) 100%);
+$blueButtonGradient: linear-gradient($topBlue 0%, $bottomBlue 100%);
+$orangeButtonGradient: linear-gradient(rgb(249,157,27) 0%, rgb(222,132,5) 100%);
+
+// Media Queries
+$large:	"only screen and (min-width : 950px)";
+$medium: "only screen and (min-width : 751px)";
+$mobile: "only screen and (max-width : 750px)";
+
+// Fonts 
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400' );
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+$openSans: 'Open Sans', sans-serif;
+$roboto: 'Roboto', sans-serif;
+
+// Spacing 
+$gutter: 24px;
+
+@mixin font-smoothing($value: antialiased) {
+	@if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "owl.carousel.css";
+@import "owl.theme.default.css";
+@import "reset.scss";
+@import "layout.scss";
+@import "modules.scss";
+@import "theme.scss";
+@import "states.scss";

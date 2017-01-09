@@ -1,0 +1,39 @@
+<footer>
+  <div class="footer--wrapper">
+    <div class="icon--block">
+
+      <img src='{{ "/assets/img/logo-lrg.png" | prepend: site.baseurl_root }}' alt="Protect Yu Logo">
+    </div>
+    <div class="address--block">
+      <h4 class="block--title">{% t contact-us %}</h4>
+      <p class="address--street">
+        3055, St-Martin blvd. West 
+        5th floor </br>
+        Laval (Quebec)  
+        H7T 0J3
+      </p>
+      <p class="address--phone">
+        <span>T: 450-905-4800 </span>
+        <span> info@protect-yu.com</span>
+      </p>
+    </div>
+    <div class="social-media--block">
+      <h4 class="block--title">{% t social-media %}</h4>
+      <ul>
+        <li>
+          <a href="https://www.youtube.com/channel/UCXcx78yGApb1nkmlpZTpxLA"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/protectyu/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/protect-yu"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="contact-form--block">
+      <h4 class="block--title">{% t subscribe-newsletter %}</h4>
+      {% include contact-form.html %}
+    </div>
+  </div>
+</footer>

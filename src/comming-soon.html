@@ -1,0 +1,57 @@
+---
+layout: default
+permalink: /comming-soon/
+---
+
+
+<section class="comming-soon__hero">
+	<h4>
+      {% t hero.protect-yu %}: {% t hero.slide-text %}
+    </h4>
+</section>
+
+<section class="cta-section comming-soon">	
+	<div class="cta-section--top-logo"></div>
+	
+	<div class="cta-section--header">
+		<h2 class="service-title"> {% t service-title %}  </h2>
+		<h4 class="service-subtitle"> {% t service-subtitle %}</h4>
+		<span class="underline"></span>
+	</div>
+
+	<div class="service-list__block">
+		<ul class="service-list">
+			{% for service in site.services %}
+				<li class="service">
+					<div class="service-image {{ service.class }}"></div>
+					<div class="service-text">
+						<h2>{% t service.title %}</h2>
+						<p>{% t service.description %}</p>
+						<p class="black">
+							{% t service-blocks.comming-soon %}
+						</p>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+	
+<section class="news-letter__block">
+	<div class="news-letter_flex-wraper">
+		<div class="news-letter__subscription--text">
+			<h2>
+				{% t subscribe-to-the-newsletter.title %}
+			</h2>
+			<p>
+				{% t subscribe-to-the-newsletter.paragraph.one %}
+			</p>
+			<p>
+				{% t subscribe-to-the-newsletter.paragraph.two %}
+			</p>
+		</div>
+		<div class="news-letter__subscription--form">
+			{% include contact-form.html %}
+		</div>
+	</div>
+</section>

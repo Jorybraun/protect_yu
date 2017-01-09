@@ -1,0 +1,35 @@
+<ul class="founder--list">
+
+  {% for founder in site.founders  %}
+    <li class="founder--block">
+      <div class="founder--image-wrapper {{ founder.class }}"></div>
+      <div class="founder--content-wrapper">
+        <h4 class="founder--name">{{ founder.name }}</h4>
+        {% if founder.title %}
+          <p class="founder--role">
+            {{ founder.title }}
+          </p>
+        {% endif %}
+        <p class="founder--bio">
+          {% t founder.description %}
+        </p>
+      </div>
+    </li>
+  {% endfor %}
+
+    <li class="founder--block">
+      <div class="founder--image-wrapper avatar"></div>
+      <div class="founder--content-wrapper">
+        <h1 class="founder--name"> {% t founder-cta.title %} </h1>
+        <form class="form-btn" action="https://www.gotroo.com/en/fund-raising-view/99/protect-yu/" method='get'>
+          <button class="cta-gradient-blue btn ">
+            {% t founder-cta.button %}
+          </button>
+        </form>
+        
+        <a href="https://www.gotroo.com"><img src='{{ "/assets/img/logo-gotroo.png" | prepend: site.baseurl_root }}' alt=""></a>
+
+      </div>
+    </li>
+         
+  </ul>

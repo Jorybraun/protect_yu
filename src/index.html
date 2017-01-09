@@ -1,0 +1,118 @@
+---
+layout: default
+---
+
+<section class="hero-section">
+
+  <div class="hero-section--slider owl-carousel owl-theme">
+    <div class="owl-slide">
+      <div class="slide-text">
+        <h4>
+          {% t hero.protect-yu %}: {% t hero.slide-text %}
+        </h4>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-to">
+    <p>{% t hero.learn-more %}</p>
+    <img src='{{ "/assets/img/dropdown-yellow.svg" | prepend: site.baseurl_root }}' alt="">
+  </div>
+</section>
+    
+    <section class="cta-section">
+      <div class="cta-section--top-logo"></div>
+      <div class="cta-section--content-wrapper">
+        <div class="cta-section--header">
+          <h2 class="cta-section--title">
+            {% t cta-section.header-title %}
+          </h2>
+          <p class="cta-section--subtitle">
+            {% t cta-section.header-subtitle %}
+          </p>
+          <span class="underline"></span>
+        </div>
+        
+        <div class="cta-section--video">
+          <div class="cta-section--video__wrapper">
+            <div class="js-video--trigger video--trigger">
+              <div class="video">
+                <div class="close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <video id="bcVideo" data-account="4218124750001" data-player="default" data-embed="default" data-video-id="5241646015001"></video>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="mobile__cta-seciont--video">
+          <video id="bcVideo" data-account="4218124750001" data-player="default" data-embed="default" data-video-id="5241646015001" controls></video>
+        </div>
+
+        <div class="cta-section--content">
+          <div class="cta-section--detail-block">
+            <div class="detail-block--header">
+              <h3>
+                {% t cta-section.description-block.title %}
+              </h3>
+              <p class='subtitle'>
+                {% t cta-section.description-block.sub-title %}
+              </p>
+            </div>
+            <div class='body-text'>
+              <p>
+                {% t cta-section.description-block.description %}  
+              </p>
+              <p>
+                *{% t cta-section.description-block.minimum %} 
+              </p>
+            </div>
+             <div class="cta-section--cta-row">
+              <form class="form-btn" action="https://www.gotroo.com/en/fund-raising-view/99/protect-yu/" method='get'>
+                <button class="cta-gradient-blue btn">
+                   {% t cta-section.description-block.button %} 
+                </button>
+              </form>
+              <a href="https://www.gotroo.com/en/fund-raising-view/99/protect-yu/"><img src='{{ "/assets/img/logo-gotroo.png" | prepend: site.baseurl_root }}' alt=""></a> 
+            </div>
+          </div>
+          <div class="cta-section--offer-block">
+            <ul>
+                
+              {% include offers-block.html %}
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="offer-value--section">
+      <div class="offer-value--wrapper">
+        <ul>
+          <li>
+            <h2 class="value-title"> {% t offer-value.first-title %}</h2>
+            <p class="value-body">
+                {% t offer-value.first-description %}
+            </p>
+          </li>
+          <li>
+             <h2 class="value-title">
+              {% t offer-value.second-title %} 
+            </h2>
+             <p class="value-body">
+                {% t offer-value.second-description %}
+             </p>
+          </li>
+<!--           <li>
+             <h2 class="value-title">Déclaration</h2>
+             <p class="value-body">
+               Une population formée, éduquée et entrainée en matière de sécurité et de protection civile représente la meilleure option pour assurer une paix sociale durable et un avenir sécuritaire des collectivités.
+             </p>
+          </li> -->
+        </ul>
+      </div>
+    </section>
+    <section class="about-us--section">
+    {% include founders-block.html %}   
+</section>
