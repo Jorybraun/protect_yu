@@ -1,13 +1,20 @@
+
 {% for offer in site.offers %}
+
+{% if site.lang == "fr" %}
+  {% capture price %}{{ offer.price }}$ {% endcapture %}
+{% elsif site.lang == "en" %}
+  {% capture price %}${{ offer.price }}{% endcapture %}
+{% endif %}
 <li class="offer {{ offer.class }}">
   <div class="offer-header">
     <p class="label">{% t offer-blocks.investment-of %}</p>
-    <h4 class="offer-value"> {{ offer.price }} $+ </h4>
+    <h4 class="offer-value"> {{ price }} + </h4>
     <form class="form-btn" action="https://www.gotroo.com/en/fund-raising-view/99/protect-yu/" method='get'>
       <button class="btn one">{% t offer-blocks.button %}</button>
     </form>
     <p class="description">
-       {% t with-any-investment-of %} {{ offer.price }} {% t you-will-be-entitled %}
+       {% t with-any-investment-of %} {{ price }} {% t you-will-be-entitled %}
       <span class="percentage">{{ offer.percentage }}%</span>
       {% t offer.description %}
     </p>

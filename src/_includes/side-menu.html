@@ -5,9 +5,9 @@
     </span>
     <nav class="menu-row">
       <ul>
-        <li> <a href="{{ site.baseurl }}/comming-soon">YU Alerts</a> </li>
-        <li> <a href="{{ site.baseurl }}/comming-soon">YU Travel</a> </li>
-        <li> <a href="{{ site.baseurl }}/comming-soon">YU Training</a> </li>
+        <li> <a href="{{ site.baseurl }}/comming-soon">{% t service-blocks.title.one %}</a> </li>
+        <li> <a href="{{ site.baseurl }}/comming-soon">{% t service-blocks.title.two %}</a> </li>
+        <li> <a href="{{ site.baseurl }}/comming-soon">{% t service-blocks.title.three %}</a> </li>
         
         <li> <a href="https://www.gotroo.com/en/fund-raising-view/99/protect-yu/"> <img src='{{ "/assets/img/logo_gotroo.png" | prepend: site.baseurl_root }}' alt=""> </a> </li>
         <li>
@@ -25,8 +25,10 @@
         </li>
         <li>
           <ul class="language">
-            <li><a href="./index.html">EN</a></li>
-            <li><a href="./english_index.html">FR</a></li>
+            {% capture link1 %}{{ site.baseurl_root }}{{ page.url }}{% endcapture %}
+            {% capture link2 %}/fr{{ page.url }}{% endcapture %}
+              <li><a href="{{ link1 }}" >EN</a></li>
+              <li><a href="{{ link2 }}" >FR</a></li>
           </ul>
         </li>
       </ul>

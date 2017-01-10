@@ -339,7 +339,7 @@ header .menu-row {
         align-items: flex-start; } }
 
 .cta-section--offer-block {
-  flex: 1 1 450px;
+  flex: 3 1 700px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -360,15 +360,16 @@ header .menu-row {
       .cta-section--offer-block ul li.offer button.btn {
         width: 100%;
         height: 50px; }
+      .cta-section--offer-block ul li.offer.three {
+        order: 1; }
       @media only screen and (min-width: 751px) {
         .cta-section--offer-block ul li.offer {
           margin: 0;
-          flex: 1 0 30%; }
+          flex: 1 1 33%; }
           .cta-section--offer-block ul li.offer.two {
             margin-left: -24px;
             z-index: 200; }
           .cta-section--offer-block ul li.offer.three {
-            order: 1;
             margin-left: -24px; } }
     @media only screen and (min-width: 751px) {
       .cta-section--offer-block ul {
@@ -798,6 +799,8 @@ header .menu-row {
     .cta-section--offer-block ul li.offer p.description .year, .cta-section--offer-block ul li.offer p.offer-length .year {
       color: #0093d8;
       font-weight: 400; }
+  .cta-section--offer-block ul li.offer p.offer-length {
+    letter-spacing: .5px; }
   .cta-section--offer-block ul li.offer p.includes {
     font-family: "Roboto", sans-serif;
     font-size: 16px; }
